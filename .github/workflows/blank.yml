@@ -5,6 +5,13 @@ on:
   push:
     branches:
       - main
+name: Build RAJ MOCK TEST APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
