@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Tests | Raj Mock V2.0</title>
+
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+<link
+    rel="stylesheet"
+    href="css/student-tests-v2.css">
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="topbar">
+
+
+    <div class="brand">
+
+
+        <button
+            class="back-btn"
+            id="backBtn">
+
+            ←
+
+        </button>
+
+
+        <div class="brand-icon">
+            🎓
+        </div>
+
+
+        <div>
+
+            <h2>
+                RAJ MOCK
+            </h2>
+
+            <span>
+                TEST V2.0
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="student-mini">
+
+
+        <div
+            class="avatar"
+            id="studentAvatar">
+
+            R
+
+        </div>
+
+
+        <span id="studentName">
+            Student
+        </span>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="container">
+
+
+    <!-- =====================================
+         EXAM HEADER
+    ====================================== -->
+
+    <section class="exam-heading">
+
+
+        <div class="exam-main-icon">
+            🚆
+        </div>
+
+
+        <div>
+
+            <div class="mini-label">
+                SELECT CATEGORY
+            </div>
+
+
+            <h1 id="examName">
+                Railway
+            </h1>
+
+
+            <p>
+                Choose a category to view its tests.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         BREADCRUMB
+    ====================================== -->
+
+    <div class="breadcrumb">
+
+
+        <button id="homeBtn">
+            Home
+        </button>
+
+
+        <span>
+            /
+        </span>
+
+
+        <strong id="breadcrumbExam">
+            Railway
+        </strong>
+
+
+        <span
+            id="breadcrumbCategoryWrap"
+            style="display:none;">
+
+            /
+
+            <strong id="breadcrumbCategory">
+                Category
+            </strong>
+
+        </span>
+
+    </div>
+
+
+
+    <!-- =====================================
+         SEARCH
+    ====================================== -->
+
+    <div class="search-box">
+
+
+        <span>
+            🔎
+        </span>
+
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search category...">
+
+    </div>
+
+
+
+    <!-- =====================================
+         CATEGORY AREA
+    ====================================== -->
+
+    <section id="categorySection">
+
+
+        <div class="section-title">
+
+
+            <div>
+
+                <h2>
+                    Railway Categories
+                </h2>
+
+                <p>
+                    Select your preparation category.
+                </p>
+
+            </div>
+
+
+            <span
+                id="categoryCount"
+                class="count-badge">
+
+                0
+
+            </span>
+
+        </div>
+
+
+        <div
+            id="categoryGrid"
+            class="category-grid">
+
+
+            <div class="loading-box">
+
+                <div class="loader"></div>
+
+                <p>
+                    Loading categories...
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         TEST AREA
+    ====================================== -->
+
+    <section
+        id="testSection"
+        style="display:none;">
+
+
+        <div class="section-title">
+
+
+            <div>
+
+                <h2 id="testHeading">
+                    Tests
+                </h2>
+
+
+                <p>
+                    Choose a test and start practicing.
+                </p>
+
+            </div>
+
+
+            <button
+                class="change-btn"
+                id="changeCategoryBtn">
+
+                ← Categories
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="testGrid"
+            class="test-grid">
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- =========================================
+     BOTTOM NAV
+========================================= -->
+
+<nav class="bottom-nav">
+
+
+    <button
+        id="navHome"
+        class="nav-item active">
+
+        <span>
+            🏠
+        </span>
+
+        <small>
+            Home
+        </small>
+
+    </button>
+
+
+    <button
+        class="nav-item active">
+
+        <span>
+            📚
+        </span>
+
+        <small>
+            Tests
+        </small>
+
+    </button>
+
+
+    <button
+        id="navResults"
+        class="nav-item">
+
+        <span>
+            📊
+        </span>
+
+        <small>
+            Results
+        </small>
+
+    </button>
+
+
+    <button
+        class="nav-item">
+
+        <span>
+            🏆
+        </span>
+
+        <small>
+            Rank
+        </small>
+
+    </button>
+
+
+    <button
+        class="nav-item">
+
+        <span>
+            👤
+        </span>
+
+        <small>
+            Profile
+        </small>
+
+    </button>
+
+
+</nav>
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script
+    type="module"
+    src="./js/student-tests-v2.js">
+</script>
+
+</body>
+</html>

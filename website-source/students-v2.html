@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Students | Raj Mock Test V2.0</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/students-v2.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     SIDEBAR
+====================================================== -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>🎓 RAJ MOCK</h2>
+
+        <p>Admin Panel V2.0</p>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+
+            <a href="admin-dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="add-test.html">
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+                <span>Add Test</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="view-tests.html">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>View Tests</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="add-question.html">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <span>Add Question</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="view-questions.html">
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>View Questions</span>
+
+            </a>
+
+        </li>
+
+
+        <li class="active">
+
+            <a href="students-v2.html">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <span>Students</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="subscriptions.html">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <span>Subscriptions</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admin-payment-v2.html">
+
+                <i class="fa-solid fa-money-check-dollar"></i>
+
+                <span>Payment Approval</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="view-results.html">
+
+                <i class="fa-solid fa-square-poll-vertical"></i>
+
+                <span>Results</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="leaderboard.html">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                <span>Leaderboard</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="#"
+               id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<div class="main">
+
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+        <div>
+
+            <h1>👨‍🎓 Student Management</h1>
+
+            <p>
+                Manage registered students
+            </p>
+
+        </div>
+
+
+        <button
+            class="refresh-btn"
+            id="refreshBtn"
+        >
+
+            <i class="fa-solid fa-rotate"></i>
+
+            Refresh
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         STATS
+    ================================================== -->
+
+    <div class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                👨‍🎓
+
+            </div>
+
+            <div>
+
+                <span>Total Students</span>
+
+                <strong id="totalStudents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                🟢
+
+            </div>
+
+            <div>
+
+                <span>Active</span>
+
+                <strong id="activeStudents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                💎
+
+            </div>
+
+            <div>
+
+                <span>Premium</span>
+
+                <strong id="premiumStudents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                🆓
+
+            </div>
+
+            <div>
+
+                <span>Free</span>
+
+                <strong id="freeStudents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         CONTROLS
+    ================================================== -->
+
+    <div class="controls">
+
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search name, mobile or email..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <select id="planFilter">
+
+            <option value="All">
+                All Plans
+            </option>
+
+            <option value="Premium">
+                Premium
+            </option>
+
+            <option value="Free">
+                Free
+            </option>
+
+        </select>
+
+
+        <select id="statusFilter">
+
+            <option value="All">
+                All Status
+            </option>
+
+            <option value="Active">
+                Active
+            </option>
+
+            <option value="Blocked">
+                Blocked
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         LOADING
+    ================================================== -->
+
+    <div
+        class="loading-box"
+        id="loadingBox"
+    >
+
+        <i class="fa-solid fa-spinner fa-spin"></i>
+
+        Loading Students...
+
+    </div>
+
+
+
+    <!-- ==================================================
+         EMPTY
+    ================================================== -->
+
+    <div
+        class="empty-box"
+        id="emptyBox"
+        style="display:none;"
+    >
+
+        <div>👨‍🎓</div>
+
+        <h3>
+            No Students Found
+        </h3>
+
+        <p>
+            No student matches your search.
+        </p>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         STUDENT LIST
+    ================================================== -->
+
+    <div
+        class="student-grid"
+        id="studentList"
+    ></div>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        © 2026 Raj Mock Test Portal |
+        All Rights Reserved
+
+    </footer>
+
+</div>
+
+
+
+<!-- ======================================================
+     STUDENT DETAILS MODAL
+====================================================== -->
+
+<div
+    class="modal"
+    id="studentModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+        >
+
+            ×
+
+        </button>
+
+
+        <div
+            class="modal-avatar"
+            id="modalAvatar"
+        >
+            👤
+        </div>
+
+
+        <h2 id="modalName">
+            Student
+        </h2>
+
+
+        <div
+            class="modal-details"
+            id="modalDetails"
+        ></div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="block-btn"
+                id="modalBlockBtn"
+            >
+                🔒 Block
+            </button>
+
+
+            <button
+                class="delete-btn"
+                id="modalDeleteBtn"
+            >
+                🗑️ Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     TOAST
+====================================================== -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    <span id="toastMessage"></span>
+
+</div>
+
+
+
+<!-- ======================================================
+     JS
+====================================================== -->
+
+<script
+    type="module"
+    src="./js/students-v2.js"
+></script>
+
+
+</body>
+
+</html>

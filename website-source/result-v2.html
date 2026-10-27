@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Result | Raj Mock Test V2.0</title>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+<link
+    rel="stylesheet"
+    href="css/result-v2.css">
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="result-header">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            🎓
+        </div>
+
+        <div>
+
+            <strong>
+                RAJ MOCK TEST
+            </strong>
+
+            <small>
+                Test Result
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="student-info">
+
+        <div
+            class="student-avatar"
+            id="studentAvatar">
+
+            S
+
+        </div>
+
+        <span id="studentName">
+            Student
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="result-container">
+
+
+    <!-- ======================================
+         RESULT HERO
+    ======================================= -->
+
+    <section class="result-hero">
+
+
+        <div class="result-icon">
+            🏆
+        </div>
+
+
+        <h1>
+            Test Completed!
+        </h1>
+
+
+        <p id="testName">
+            Loading Result...
+        </p>
+
+
+        <div
+            class="result-date"
+            id="resultDate">
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         SCORE CARD
+    ======================================= -->
+
+    <section class="score-card">
+
+
+        <div class="score-circle">
+
+            <div>
+
+                <strong id="percentage">
+                    0%
+                </strong>
+
+                <span>
+                    Score
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="score-details">
+
+            <h2 id="scoreText">
+                0 / 0
+            </h2>
+
+            <p>
+                Correct Answers
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         STATISTICS
+    ======================================= -->
+
+    <section class="stats-grid">
+
+
+        <div class="stat-card correct">
+
+            <div class="stat-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <span>
+                    Correct
+                </span>
+
+                <strong id="correct">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card wrong">
+
+            <div class="stat-icon">
+                ✕
+            </div>
+
+            <div>
+
+                <span>
+                    Wrong
+                </span>
+
+                <strong id="wrong">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card unanswered">
+
+            <div class="stat-icon">
+                —
+            </div>
+
+            <div>
+
+                <span>
+                    Unattempted
+                </span>
+
+                <strong id="unattempted">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card time">
+
+            <div class="stat-icon">
+                ⏱️
+            </div>
+
+            <div>
+
+                <span>
+                    Time Taken
+                </span>
+
+                <strong id="timeTaken">
+                    00:00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         PERFORMANCE
+    ======================================= -->
+
+    <section class="performance-card">
+
+
+        <h2>
+            📊 Performance
+        </h2>
+
+
+        <div class="performance-message">
+
+            <div
+                class="performance-icon"
+                id="performanceIcon">
+
+                ⭐
+
+            </div>
+
+
+            <div>
+
+                <h3 id="performanceTitle">
+                    Good Job!
+                </h3>
+
+                <p id="performanceText">
+                    Keep practicing to improve
+                    your score.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="performance-bar">
+
+            <div
+                id="performanceFill">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         TEST DETAILS
+    ======================================= -->
+
+    <section class="details-card">
+
+
+        <h2>
+            📝 Test Details
+        </h2>
+
+
+        <div class="details-grid">
+
+
+            <div>
+
+                <span>
+                    Test
+                </span>
+
+                <strong id="detailTestName">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Category
+                </span>
+
+                <strong id="detailCategory">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Total Questions
+                </span>
+
+                <strong id="detailTotal">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Duration
+                </span>
+
+                <strong id="detailDuration">
+                    0 Min
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         ACTION BUTTONS
+    ======================================= -->
+
+    <section class="result-actions">
+
+
+        <button
+            class="primary-btn"
+            id="dashboardBtn">
+
+            🏠 Dashboard
+
+        </button>
+
+
+        <button
+            class="secondary-btn"
+            id="testsBtn">
+
+            📝 More Tests
+
+        </button>
+
+
+        <button
+            class="secondary-btn"
+            id="resultsBtn">
+
+            📊 My Results
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    © 2026 Raj Mock Test V2.0
+
+</footer>
+
+
+
+<script
+    type="module"
+    src="js/result-v2.js">
+</script>
+
+
+</body>
+
+</html>

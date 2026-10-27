@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Raj Mock Test V2.0 Admin Login Portal"
+>
+
+<title>Admin Login | Raj Mock Test V2.0</title>
+
+
+<!-- ================= GOOGLE FONT ================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- ================= FONT AWESOME ================= -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+
+<style>
+
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+
+        --gold: #c89a2e;
+        --gold-dark: #9b731b;
+        --gold-light: #f5e6b8;
+
+        --cream: #fffdf7;
+        --white: #ffffff;
+
+        --dark: #202020;
+        --text: #344054;
+        --muted: #667085;
+
+        --border: #e8e0ca;
+
+        --shadow:
+            0 20px 55px rgba(65, 48, 14, .12);
+
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+
+        min-height: 100vh;
+
+        font-family: "Poppins", sans-serif;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fffdf7 0%,
+                #fffaf0 48%,
+                #f8f0da 100%
+            );
+
+        color: var(--dark);
+
+        overflow-x: hidden;
+    }
+
+
+    button,
+    input {
+        font-family: inherit;
+    }
+
+
+    a {
+        text-decoration: none;
+    }
+
+
+    /* =========================================================
+       DECORATIVE BACKGROUND
+    ========================================================= */
+
+    .bg-circle {
+
+        position: fixed;
+
+        border-radius: 50%;
+
+        pointer-events: none;
+
+        z-index: 0;
+    }
+
+
+    .circle-one {
+
+        width: 420px;
+        height: 420px;
+
+        top: -180px;
+        left: -180px;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(200,154,46,.16),
+                transparent 70%
+            );
+    }
+
+
+    .circle-two {
+
+        width: 500px;
+        height: 500px;
+
+        right: -230px;
+        top: 20%;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(200,154,46,.10),
+                transparent 70%
+            );
+    }
+
+
+    .circle-three {
+
+        width: 380px;
+        height: 380px;
+
+        left: 25%;
+        bottom: -240px;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(155,115,27,.08),
+                transparent 70%
+            );
+    }
+
+
+    /* =========================================================
+       MAIN LOGIN AREA
+    ========================================================= */
+
+    .login-page {
+
+        position: relative;
+
+        z-index: 2;
+
+        min-height: calc(100vh - 80px);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 55px 6%;
+    }
+
+
+    .login-wrapper {
+
+        width: 100%;
+
+        max-width: 1180px;
+
+        display: grid;
+
+        grid-template-columns: 1.08fr .92fr;
+
+        background: rgba(255,255,255,.82);
+
+        border:
+            1px solid rgba(200,154,46,.18);
+
+        border-radius: 30px;
+
+        box-shadow: var(--shadow);
+
+        overflow: hidden;
+
+        backdrop-filter: blur(10px);
+    }
+
+
+    /* =========================================================
+       LEFT ADMIN BRANDING PANEL
+    ========================================================= */
+
+    .brand-panel {
+
+        position: relative;
+
+        padding: 58px 55px;
+
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                145deg,
+                #fffefb 0%,
+                #fff8e7 100%
+            );
+
+        border-right:
+            1px solid #eee5cf;
+    }
+
+
+    .brand-panel::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 300px;
+        height: 300px;
+
+        border-radius: 50%;
+
+        right: -130px;
+        top: -120px;
+
+        border:
+            45px solid rgba(200,154,46,.08);
+    }
+
+
+    .brand-panel::after {
+
+        content: "";
+
+        position: absolute;
+
+        width: 180px;
+        height: 180px;
+
+        border-radius: 50%;
+
+        left: -100px;
+        bottom: -80px;
+
+        background:
+            rgba(200,154,46,.06);
+    }
+
+
+    .brand-content {
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+
+    /* =========================================================
+       ADMIN LOGO
+    ========================================================= */
+
+    .brand-logo {
+
+        width: 78px;
+        height: 78px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 22px;
+
+        font-size: 37px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #e7c96f,
+                #b98921
+            );
+
+        border:
+            1px solid rgba(155,115,27,.25);
+
+        box-shadow:
+            0 14px 30px rgba(155,115,27,.18);
+
+        margin-bottom: 25px;
+    }
+
+
+    .brand-content h1 {
+
+        font-size: 39px;
+
+        line-height: 1.15;
+
+        font-weight: 800;
+
+        color: #292929;
+
+        letter-spacing: -.8px;
+    }
+
+
+    .brand-content h1 span {
+
+        color: var(--gold-dark);
+    }
+
+
+    .brand-subtitle {
+
+        margin-top: 9px;
+
+        font-size: 15px;
+
+        font-weight: 500;
+
+        color: var(--gold-dark);
+    }
+
+
+    .brand-description {
+
+        max-width: 510px;
+
+        margin-top: 20px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        color: var(--muted);
+    }
+
+
+    /* =========================================================
+       ADMIN FEATURES
+    ========================================================= */
+
+    .feature-list {
+
+        margin-top: 32px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 14px;
+    }
+
+
+    .feature-item {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 11px;
+
+        padding: 13px 14px;
+
+        border-radius: 13px;
+
+        background:
+            rgba(255,255,255,.78);
+
+        border:
+            1px solid #eee5cf;
+
+        transition: .2s ease;
+    }
+
+
+    .feature-item:hover {
+
+        transform: translateY(-2px);
+
+        border-color:
+            rgba(200,154,46,.45);
+
+        box-shadow:
+            0 8px 22px
+            rgba(80,60,15,.07);
+    }
+
+
+    .feature-icon {
+
+        width: 36px;
+        height: 36px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 10px;
+
+        background: #fff7dc;
+
+        font-size: 17px;
+    }
+
+
+    .feature-item strong {
+
+        display: block;
+
+        font-size: 12px;
+
+        color: #292929;
+    }
+
+
+    .feature-item span {
+
+        display: block;
+
+        margin-top: 2px;
+
+        font-size: 10px;
+
+        color: #8a8f98;
+    }
+
+
+    /* =========================================================
+       ADMIN TAGS
+    ========================================================= */
+
+    .admin-tags {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        margin-top: 28px;
+    }
+
+
+    .admin-tag {
+
+        padding: 7px 12px;
+
+        border-radius: 50px;
+
+        background: #fff;
+
+        border:
+            1px solid #e7dcc0;
+
+        color: #6e5924;
+
+        font-size: 10px;
+
+        font-weight: 600;
+    }
+
+
+    /* =========================================================
+       LOGIN SIDE
+    ========================================================= */
+
+    .login-panel {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 55px 48px;
+
+        background: #ffffff;
+    }
+
+
+    .login-card {
+
+        width: 100%;
+
+        max-width: 405px;
+    }
+
+
+    .login-heading {
+
+        margin-bottom: 29px;
+    }
+
+
+    .small-title {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 6px 11px;
+
+        border-radius: 50px;
+
+        background: #fff8df;
+
+        color: var(--gold-dark);
+
+        border:
+            1px solid #eedda9;
+
+        font-size: 10px;
+
+        font-weight: 600;
+    }
+
+
+    .login-heading h2 {
+
+        margin-top: 14px;
+
+        font-size: 28px;
+
+        line-height: 1.2;
+
+        color: #202020;
+    }
+
+
+    .login-heading p {
+
+        margin-top: 7px;
+
+        font-size: 12px;
+
+        color: var(--muted);
+    }
+
+
+    /* =========================================================
+       FORM
+    ========================================================= */
+
+    .form-group {
+
+        margin-bottom: 19px;
+    }
+
+
+    .form-group label {
+
+        display: block;
+
+        margin-bottom: 8px;
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        color: #344054;
+    }
+
+
+    .input-wrapper {
+
+        position: relative;
+    }
+
+
+    .input-icon {
+
+        position: absolute;
+
+        left: 16px;
+
+        top: 50%;
+
+        transform:
+            translateY(-50%);
+
+        color:
+            var(--gold-dark);
+
+        font-size: 15px;
+
+        z-index: 2;
+
+        pointer-events: none;
+    }
+
+
+    .input-wrapper input {
+
+        width: 100%;
+
+        height: 54px;
+
+        padding:
+            0 48px;
+
+        border:
+            1px solid #ddd6c6;
+
+        border-radius: 13px;
+
+        outline: none;
+
+        background: #fff;
+
+        color: #202020;
+
+        font-size: 13px;
+
+        transition: .2s ease;
+    }
+
+
+    .input-wrapper input::placeholder {
+
+        color: #a0a4aa;
+    }
+
+
+    .input-wrapper input:hover {
+
+        border-color: #c9bd9e;
+    }
+
+
+    .input-wrapper input:focus {
+
+        border-color:
+            var(--gold);
+
+        box-shadow:
+            0 0 0 3px
+            rgba(200,154,46,.11);
+    }
+
+
+    /* =========================================================
+       PASSWORD TOGGLE
+    ========================================================= */
+
+    .password-toggle {
+
+        position: absolute;
+
+        right: 7px;
+
+        top: 50%;
+
+        transform:
+            translateY(-50%);
+
+        width: 39px;
+        height: 39px;
+
+        border: none;
+
+        border-radius: 9px;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        font-size: 16px;
+    }
+
+
+    .password-toggle:hover {
+
+        background: #f8f3e7;
+    }
+
+
+    /* =========================================================
+       LOGIN BUTTON
+    ========================================================= */
+
+    .login-btn {
+
+        width: 100%;
+
+        height: 55px;
+
+        margin-top: 4px;
+
+        border: none;
+
+        border-radius: 13px;
+
+        cursor: pointer;
+
+        color: #fff;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        background:
+            linear-gradient(
+                100deg,
+                #d5aa42,
+                #a8791d
+            );
+
+        box-shadow:
+            0 12px 25px
+            rgba(155,115,27,.22);
+
+        transition: .2s ease;
+    }
+
+
+    .login-btn:hover {
+
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 16px 30px
+            rgba(155,115,27,.28);
+    }
+
+
+    .login-btn:active {
+
+        transform:
+            translateY(0);
+    }
+
+
+    .login-btn:disabled {
+
+        opacity: .65;
+
+        cursor: not-allowed;
+
+        transform: none;
+    }
+
+
+    /* =========================================================
+       SECURITY INFO
+    ========================================================= */
+
+    .info-box {
+
+        margin-top: 19px;
+
+        padding: 13px 14px;
+
+        border-radius: 12px;
+
+        background: #fffaf0;
+
+        border:
+            1px solid #eee1bf;
+    }
+
+
+    .info-box strong {
+
+        display: block;
+
+        font-size: 10px;
+
+        color: #66521e;
+    }
+
+
+    .info-box span {
+
+        display: block;
+
+        margin-top: 3px;
+
+        font-size: 9px;
+
+        line-height: 1.55;
+
+        color: #858078;
+    }
+
+
+    /* =========================================================
+       ERROR
+    ========================================================= */
+
+    .error-message {
+
+        display: none;
+
+        margin-top: 13px;
+
+        padding: 10px 12px;
+
+        border-radius: 10px;
+
+        background: #fff1f2;
+
+        border:
+            1px solid #fecdd3;
+
+        color: #be123c;
+
+        font-size: 11px;
+
+        text-align: center;
+    }
+
+
+    .error-message.show {
+
+        display: block;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+
+        position: relative;
+
+        z-index: 3;
+
+        background: #25221b;
+
+        color: #eee;
+
+        padding:
+            55px 6% 20px;
+    }
+
+
+    .footer-grid {
+
+        max-width: 1180px;
+
+        margin: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            1.4fr 1fr 1fr 1.2fr;
+
+        gap: 45px;
+    }
+
+
+    .footer h2 {
+
+        color: #fff;
+
+        font-size: 19px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .footer h3 {
+
+        color: #e5c36b;
+
+        font-size: 13px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .footer p {
+
+        color: #aaa;
+
+        font-size: 11px;
+
+        line-height: 1.8;
+    }
+
+
+    .footer a {
+
+        display: block;
+
+        width: fit-content;
+
+        margin-bottom: 9px;
+
+        color: #aaa;
+
+        font-size: 11px;
+
+        transition: .2s ease;
+    }
+
+
+    .footer a:hover {
+
+        color: #e5c36b;
+
+        transform:
+            translateX(3px);
+    }
+
+
+    .footer hr {
+
+        max-width: 1180px;
+
+        margin:
+            35px auto 20px;
+
+        border: none;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.10);
+    }
+
+
+    .footer-bottom {
+
+        max-width: 1180px;
+
+        margin: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+    }
+
+
+    .footer-bottom p {
+
+        font-size: 10px;
+
+        color: #888;
+    }
+
+
+    #liveClock {
+
+        text-align: center;
+
+        margin-top: 15px;
+
+        color: #777;
+
+        font-size: 9px;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+        .login-wrapper {
+
+            grid-template-columns: 1fr;
+
+            max-width: 650px;
+        }
+
+
+        .brand-panel {
+
+            border-right: none;
+
+            border-bottom:
+                1px solid #eee5cf;
+
+            padding:
+                42px 38px;
+        }
+
+
+        .brand-content h1 {
+
+            font-size: 32px;
+        }
+
+
+        .login-panel {
+
+            padding:
+                42px 35px;
+        }
+
+
+        .footer-grid {
+
+            grid-template-columns:
+                1fr 1fr;
+        }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+        .login-page {
+
+            padding:
+                25px 14px 35px;
+        }
+
+
+        .login-wrapper {
+
+            border-radius: 22px;
+        }
+
+
+        .brand-panel {
+
+            padding:
+                32px 22px;
+        }
+
+
+        .brand-logo {
+
+            width: 66px;
+            height: 66px;
+
+            font-size: 31px;
+
+            border-radius: 18px;
+        }
+
+
+        .brand-content h1 {
+
+            font-size: 27px;
+        }
+
+
+        .brand-description {
+
+            font-size: 12px;
+        }
+
+
+        .feature-list {
+
+            grid-template-columns: 1fr;
+
+            gap: 10px;
+        }
+
+
+        .feature-item {
+
+            padding: 11px;
+        }
+
+
+        .admin-tags {
+
+            margin-top: 20px;
+        }
+
+
+        .login-panel {
+
+            padding:
+                34px 21px;
+        }
+
+
+        .login-heading h2 {
+
+            font-size: 25px;
+        }
+
+
+        .footer {
+
+            padding:
+                40px 22px 18px;
+        }
+
+
+        .footer-grid {
+
+            grid-template-columns: 1fr;
+
+            gap: 28px;
+        }
+
+
+        .footer-bottom {
+
+            flex-direction: column;
+
+            text-align: center;
+        }
+
+    }
+
+
+    @media (max-width: 360px) {
+
+        .brand-content h1 {
+
+            font-size: 24px;
+        }
+
+
+        .login-panel {
+
+            padding:
+                30px 17px;
+        }
+
+    }
+
+</style>
+
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     BACKGROUND
+========================================================== -->
+
+<div class="bg-circle circle-one"></div>
+
+<div class="bg-circle circle-two"></div>
+
+<div class="bg-circle circle-three"></div>
+
+
+<!-- =========================================================
+     LOGIN PAGE
+========================================================== -->
+
+<main class="login-page">
+
+    <div class="login-wrapper">
+
+
+        <!-- =================================================
+             LEFT BRANDING
+        ================================================== -->
+
+        <section class="brand-panel">
+
+            <div class="brand-content">
+
+
+                <div class="brand-logo">
+                    👨‍💼
+                </div>
+
+
+                <h1>
+                    Raj Mock
+                    <span>Admin</span>
+                </h1>
+
+
+                <div class="brand-subtitle">
+                    Manage • Monitor • Grow
+                </div>
+
+
+                <p class="brand-description">
+
+                    Raj Mock Test V2.0 Administration
+                    Panel. Manage examinations, questions,
+                    students, results, subscriptions and
+                    latest job vacancies from one place.
+
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <div class="feature-list">
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            📝
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Test Management
+                            </strong>
+
+                            <span>
+                                Create & manage tests
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Question Bank
+                            </strong>
+
+                            <span>
+                                Add & update questions
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            👨‍🎓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Student Management
+                            </strong>
+
+                            <span>
+                                Monitor students
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            📢
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Job Vacancies
+                            </strong>
+
+                            <span>
+                                Publish latest jobs
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ADMIN TAGS -->
+
+                <div class="admin-tags">
+
+                    <span class="admin-tag">
+                        Tests
+                    </span>
+
+                    <span class="admin-tag">
+                        Questions
+                    </span>
+
+                    <span class="admin-tag">
+                        Students
+                    </span>
+
+                    <span class="admin-tag">
+                        Results
+                    </span>
+
+                    <span class="admin-tag">
+                        Premium
+                    </span>
+
+                    <span class="admin-tag">
+                        Job Updates
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOGIN PANEL
+        ================================================== -->
+
+        <section class="login-panel">
+
+            <div class="login-card">
+
+
+                <div class="login-heading">
+
+                    <span class="small-title">
+                        🔐 Secure Admin Portal
+                    </span>
+
+                    <h2>
+                        Welcome Admin!
+                    </h2>
+
+                    <p>
+                        Login to manage Raj Mock Test V2.0.
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="loginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Admin Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter admin email"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter admin password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                                aria-label="Show password"
+                            >
+                                👁️
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        id="loginBtn"
+                        class="login-btn"
+                    >
+                        🔐 &nbsp; Login to Admin Panel
+                    </button>
+
+
+                </form>
+
+
+                <!-- ERROR -->
+
+                <div
+                    id="errorMessage"
+                    class="error-message"
+                ></div>
+
+
+                <!-- SECURITY INFO -->
+
+                <div class="info-box">
+
+                    <strong>
+                        🛡️ Secure Administration
+                    </strong>
+
+                    <span>
+                        This area is restricted to authorized
+                        Raj Mock Test administrators only.
+                        Your Firebase authentication protects
+                        access to the administration panel.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+
+        <!-- PORTAL -->
+
+        <div>
+
+            <h2>
+                Raj Mock Test Portal
+            </h2>
+
+            <p>
+                Practice • Prepare • Perform
+            </p>
+
+            <p>
+                India's Smart CBT Practice Platform.
+            </p>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="student-login-v2.html">
+                Student Login
+            </a>
+
+            <a href="student-register-v2.html">
+                Registration
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+        </div>
+
+
+        <!-- ADMIN -->
+
+        <div>
+
+            <h3>
+                Administration
+            </h3>
+
+            <a href="admin-login-v2.html">
+                Admin Login
+            </a>
+
+            <a href="admin-dashboard-v2.html">
+                Admin Dashboard
+            </a>
+
+            <a href="subscription.html">
+                Premium
+            </a>
+
+            <a href="contact.html">
+                Support
+            </a>
+
+        </div>
+
+
+        <!-- FOLLOW -->
+
+        <div>
+
+            <h3>
+                Follow Us
+            </h3>
+
+            <a
+                href="https://www.youtube.com/@SuccessPathRohit"
+                target="_blank"
+                rel="noopener"
+            >
+                📺 YouTube
+            </a>
+
+            <a
+                href="https://wa.me/916396192742"
+                target="_blank"
+                rel="noopener"
+            >
+                💬 WhatsApp
+            </a>
+
+            <a href="mailto:rohitkumarbdn84@gmail.com">
+                📧 Email
+            </a>
+
+            <p>
+                📍 Budhana, Muzaffarnagar,
+                Uttar Pradesh
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <hr>
+
+
+    <div class="footer-bottom">
+
+        <p>
+
+            ©
+            <span id="year"></span>
+            Raj Mock Test Portal.
+            All Rights Reserved.
+
+        </p>
+
+
+        <p>
+            Made with ❤️ by Rohit Kumar
+        </p>
+
+    </div>
+
+
+    <p id="liveClock"></p>
+
+
+</footer>
+
+
+<!-- =========================================================
+     ADMIN LOGIN JS
+     EXISTING FIREBASE LOGIN
+========================================================== -->
+
+<script
+    type="module"
+    src="./js/admin-login-v2.js"
+></script>
+
+
+<!-- =========================================================
+     PAGE JAVASCRIPT
+========================================================== -->
+
+<script>
+
+    /* =====================================================
+       YEAR
+    ===================================================== */
+
+    const yearElement =
+        document.getElementById("year");
+
+    if (yearElement) {
+
+        yearElement.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+    /* =====================================================
+       LIVE CLOCK
+    ===================================================== */
+
+    function updateClock() {
+
+        const clock =
+            document.getElementById("liveClock");
+
+        if (!clock) return;
+
+        const now =
+            new Date();
+
+        clock.textContent =
+            "🕒 " +
+            now.toLocaleString(
+                "en-IN",
+                {
+                    dateStyle: "medium",
+                    timeStyle: "medium"
+                }
+            );
+
+    }
+
+
+    updateClock();
+
+    setInterval(
+        updateClock,
+        1000
+    );
+
+
+    /* =====================================================
+       PASSWORD SHOW / HIDE
+    ===================================================== */
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+
+    if (
+        passwordInput &&
+        togglePassword
+    ) {
+
+        togglePassword.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    passwordInput.type ===
+                    "password"
+                ) {
+
+                    passwordInput.type =
+                        "text";
+
+                    togglePassword.textContent =
+                        "🙈";
+
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        "Hide password"
+                    );
+
+                }
+
+                else {
+
+                    passwordInput.type =
+                        "password";
+
+                    togglePassword.textContent =
+                        "👁️";
+
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        "Show password"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FORM SUBMIT
+       
+       Existing admin-login-v2.js handles Firebase
+       authentication.
+    ===================================================== */
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+    if (loginForm) {
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+            }
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

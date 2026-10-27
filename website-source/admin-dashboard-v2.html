@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | Raj Mock Test V2.0</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/admin-dashboard-v2.css"
+    >
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     APP
+===================================================== -->
+
+<div class="admin-app">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                📝
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    Raj Mock Test
+                </strong>
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-title">
+                MAIN
+            </div>
+
+
+            <a
+                href="admin-dashboard-v2.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="create-exam-v2.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🎯
+                </span>
+
+                <span>
+                    Create Exam
+                </span>
+
+            </a>
+
+
+            <a
+                href="add-test-v2.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    📝
+                </span>
+
+                <span>
+                    Add Test
+                </span>
+
+            </a>
+
+
+            <div class="nav-title">
+                MANAGEMENT
+            </div>
+
+
+            <a
+                href="manage-tests-v2.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🗂️
+                </span>
+
+                <span>
+                    Manage Tests
+                </span>
+
+            </a>
+
+
+            <a
+                href="manage-exams-v2.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🎯
+                </span>
+
+                <span>
+                    Manage Exams
+                </span>
+
+            </a>
+
+
+            <a
+                href="students-v2.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    👨‍🎓
+                </span>
+
+                <span>
+                    Students
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-results-v2.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Results
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-payment-v2.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    💳
+                </span>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <div class="nav-title">
+                PORTAL
+            </div>
+
+
+            <a
+                href="index.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Main Portal
+                </span>
+
+            </a>
+
+
+            <a
+                href="student-dashboard-v2.html"
+                target="_blank"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    👁️
+                </span>
+
+                <span>
+                    Student Portal
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-mini-profile">
+
+                <div class="mini-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <span>
+                        Admin
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="logoutBtn"
+                class="sidebar-logout"
+            >
+
+                🚪 Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN AREA
+    ================================================== -->
+
+    <main class="main-area">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button
+                    type="button"
+                    id="menuBtn"
+                    class="menu-btn"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <span class="top-label">
+                        ADMINISTRATION
+                    </span>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="top-right">
+
+                <button
+                    type="button"
+                    id="refreshBtn"
+                    class="refresh-btn"
+                    title="Refresh Dashboard"
+                >
+
+                    🔄
+
+                    <span>
+                        Refresh
+                    </span>
+
+                </button>
+
+
+                <div class="top-admin">
+
+                    <div class="top-avatar">
+                        A
+                    </div>
+
+                    <div class="top-admin-info">
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Admin
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="dashboard-content">
+
+
+            <!-- WELCOME -->
+
+            <section class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="welcome-small">
+                        👋 Welcome back
+                    </span>
+
+                    <h2>
+                        Raj Mock Test
+                        <span>V2.0</span>
+                    </h2>
+
+                    <p>
+                        Manage your exams, tests, questions,
+                        students, payments and results from one place.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-icon">
+                    🎓
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STATS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card blue">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            🎯
+                        </div>
+
+                        <span class="stat-tag">
+                            EXAMS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <strong id="examCount">
+                            ...
+                        </strong>
+
+                        <span>
+                            Total Exams
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card purple">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            📝
+                        </div>
+
+                        <span class="stat-tag">
+                            TESTS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <strong id="testCount">
+                            ...
+                        </strong>
+
+                        <span>
+                            Total Tests
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card orange">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            ❓
+                        </div>
+
+                        <span class="stat-tag">
+                            QUESTIONS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <strong id="questionCount">
+                            ...
+                        </strong>
+
+                        <span>
+                            Total Questions
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card green">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            👨‍🎓
+                        </div>
+
+                        <span class="stat-tag">
+                            STUDENTS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <strong id="studentCount">
+                            ...
+                        </strong>
+
+                        <span>
+                            Registered Students
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card red">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+                            📊
+                        </div>
+
+                        <span class="stat-tag">
+                            RESULTS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <strong id="resultCount">
+                            ...
+                        </strong>
+
+                        <span>
+                            Test Results
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+            ================================================== -->
+
+            <section class="section-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            CONTROL CENTER
+                        </span>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                        <p>
+                            Quickly access important admin functions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="action-grid">
+
+
+                    <!-- CREATE EXAM -->
+
+                    <a
+                        href="create-exam-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon blue-icon">
+                            🎯
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Create Exam
+                            </h3>
+
+                            <p>
+                                Create exam and categories.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- ADD TEST -->
+
+                    <a
+                        href="add-test-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon purple-icon">
+                            📝
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Add Test
+                            </h3>
+
+                            <p>
+                                Create tests and questions.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- MANAGE TESTS -->
+
+                    <a
+                        href="manage-tests-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon orange-icon">
+                            🗂️
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Manage Tests
+                            </h3>
+
+                            <p>
+                                Edit or delete tests.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- MANAGE EXAMS -->
+
+                    <a
+                        href="manage-exams-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon red-icon">
+                            🎯
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Manage Exams
+                            </h3>
+
+                            <p>
+                                Manage complete exams.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- STUDENTS -->
+
+                    <a
+                        href="students-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon green-icon">
+                            👨‍🎓
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Students
+                            </h3>
+
+                            <p>
+                                View and manage students.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- RESULTS -->
+
+                    <a
+                        href="admin-results-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon cyan-icon">
+                            📊
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Results
+                            </h3>
+
+                            <p>
+                                View, search and delete results.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PAYMENT -->
+
+                    <a
+                        href="admin-payment-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon yellow-icon">
+                            💳
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Payment Approval
+                            </h3>
+
+                            <p>
+                                Approve Premium payments.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- QUESTIONS -->
+
+                    <a
+                        href="add-test-v2.html"
+                        class="action-card"
+                    >
+
+                        <div class="action-icon pink-icon">
+                            ❓
+                        </div>
+
+                        <div class="action-content">
+
+                            <h3>
+                                Questions
+                            </h3>
+
+                            <p>
+                                Add single or bulk questions.
+                            </p>
+
+                        </div>
+
+                        <span class="action-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SYSTEM STATUS
+            ================================================== -->
+
+            <section class="status-section">
+
+
+                <div class="system-card">
+
+                    <div class="system-left">
+
+                        <div class="system-icon">
+                            🔥
+                        </div>
+
+                        <div>
+
+                            <span class="system-label">
+                                DATABASE STATUS
+                            </span>
+
+                            <strong id="firebaseTitle">
+                                Firebase Connected
+                            </strong>
+
+                            <p id="firebaseMessage">
+                                Firestore data is loading...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="firebase-status"
+                        id="firebaseStatus"
+                    >
+
+                        <span class="status-dot">
+                            ●
+                        </span>
+
+                        Checking
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="system-card portal-card">
+
+                    <div class="system-left">
+
+                        <div class="system-icon">
+                            🌐
+                        </div>
+
+                        <div>
+
+                            <span class="system-label">
+                                STUDENT PORTAL
+                            </span>
+
+                            <strong>
+                                Raj Mock Test V2.0
+                            </strong>
+
+                            <p>
+                                Open the student portal in a new tab.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="student-dashboard-v2.html"
+                        target="_blank"
+                        class="open-portal-btn"
+                    >
+
+                        Open Portal
+                        →
+
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <span>
+                    © 2026 Raj Mock Test V2.0
+                </span>
+
+                <span>
+                    Admin Control Panel
+                </span>
+
+            </footer>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     MOBILE OVERLAY
+===================================================== -->
+
+<div
+    id="sidebarOverlay"
+    class="sidebar-overlay"
+></div>
+
+
+
+<!-- =====================================================
+     SCRIPT
+===================================================== -->
+
+<script
+    type="module"
+    src="./js/admin-dashboard-v2.js"
+></script>
+
+
+</body>
+
+</html>

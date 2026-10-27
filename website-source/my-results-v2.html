@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>My Results | Raj Mock Test</title>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+<link
+    rel="stylesheet"
+    href="css/my-results-v2.css">
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="results-header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🎓
+        </div>
+
+        <div>
+
+            <strong>
+                RAJ MOCK TEST
+            </strong>
+
+            <span>
+                My Results
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="student-box">
+
+        <div
+            class="student-avatar"
+            id="studentAvatar">
+
+            S
+
+        </div>
+
+        <span id="studentName">
+            Student
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="results-container">
+
+
+    <!-- ======================================
+         PAGE TITLE
+    ======================================= -->
+
+    <section class="page-title">
+
+        <div>
+
+            <h1>
+                📊 My Results
+            </h1>
+
+            <p>
+                View your test performance and answer keys.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="backBtn"
+            class="back-btn">
+
+            ← Dashboard
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================
+         SUMMARY
+    ======================================= -->
+
+    <section class="summary-grid">
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                📝
+            </div>
+
+            <div>
+
+                <span>
+                    Tests Attempted
+                </span>
+
+                <strong id="totalTests">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <span>
+                    Best Score
+                </span>
+
+                <strong id="bestScore">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                🎯
+            </div>
+
+            <div>
+
+                <span>
+                    Average Score
+                </span>
+
+                <strong id="averageScore">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         SEARCH
+    ======================================= -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                type="text"
+                id="searchResults"
+                placeholder="Search test or category...">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         RESULTS
+    ======================================= -->
+
+    <section class="results-section">
+
+
+        <div class="section-heading">
+
+            <h2>
+                📚 Test History
+            </h2>
+
+            <span id="resultCount">
+                0 Results
+            </span>
+
+        </div>
+
+
+        <div
+            id="resultsGrid"
+            class="results-grid">
+
+
+            <!-- Loading -->
+
+            <div class="loading-box">
+
+                <div class="loader"></div>
+
+                <p>
+                    Loading results...
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     ANSWER KEY MODAL
+========================================== -->
+
+<div
+    id="answerModal"
+    class="modal">
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTestName">
+                    Answer Key
+                </h2>
+
+                <p id="modalTestInfo">
+                    Test Answers
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeModalBtn"
+                class="close-btn">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <div
+            id="answerKeyContainer"
+            class="answer-key-container">
+
+
+            <div class="loading-box">
+
+                Loading Answer Key...
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    © 2026 Raj Mock Test V2.0
+
+</footer>
+
+
+
+<script
+    type="module"
+    src="js/my-results-v2.js">
+</script>
+
+
+</body>
+
+</html>

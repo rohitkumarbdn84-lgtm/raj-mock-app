@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Category - Raj Mock Test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/add-category-v2.css"
+    >
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+<!-- ======================================================
+     TOPBAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            📂
+        </div>
+
+        <div>
+
+            <h2>
+                Raj Mock Test
+            </h2>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="backBtn"
+        class="back-btn"
+    >
+        ← Dashboard
+    </button>
+
+</header>
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<main class="container">
+
+    <section class="page-header">
+
+        <div class="eyebrow">
+            CATEGORY MANAGEMENT
+        </div>
+
+        <h1>
+            Create New Category
+        </h1>
+
+        <p>
+            Select an exam and create a category for it.
+        </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         CATEGORY FORM
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                📂
+            </div>
+
+            <div>
+
+                <h2>
+                    Category Details
+                </h2>
+
+                <p>
+                    Create a category under your selected exam.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <!-- EXAM -->
+
+            <div class="form-group full">
+
+                <label for="examSelect">
+                    Choose Your Exam
+                </label>
+
+                <select id="examSelect">
+
+                    <option value="">
+                        Loading Exams...
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CATEGORY NAME -->
+
+            <div class="form-group full">
+
+                <label for="categoryName">
+                    Category Name
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryName"
+                    placeholder="Enter category name"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group full">
+
+                <label for="categoryDescription">
+                    Category Description
+                </label>
+
+                <textarea
+                    id="categoryDescription"
+                    rows="4"
+                    placeholder="Enter category description"
+                ></textarea>
+
+            </div>
+
+
+            <!-- ICON -->
+
+            <div class="form-group">
+
+                <label for="categoryIcon">
+                    Category Icon
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryIcon"
+                    value="📂"
+                    maxlength="5"
+                    placeholder="📂"
+                >
+
+                <small>
+                    Example: 📂 ⚡ 🔧 📚 💻
+                </small>
+
+            </div>
+
+
+            <!-- ORDER -->
+
+            <div class="form-group">
+
+                <label for="categoryOrder">
+                    Display Order
+                </label>
+
+                <input
+                    type="number"
+                    id="categoryOrder"
+                    min="1"
+                    placeholder="1"
+                >
+
+                <small>
+                    Lower number appears first.
+                </small>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="form-group full">
+
+                <label for="categoryStatus">
+                    Status
+                </label>
+
+                <select id="categoryStatus">
+
+                    <option value="Publish">
+                        Publish
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- CREATE -->
+
+        <div class="action-area">
+
+            <button
+                type="button"
+                id="createCategoryBtn"
+                class="create-btn"
+            >
+                📂 Create Category
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         INFO
+    ================================================== -->
+
+    <section class="info-card">
+
+        <div class="info-icon">
+            ℹ️
+        </div>
+
+        <div>
+
+            <h3>
+                How it works
+            </h3>
+
+            <p>
+                Select an exam first. The category will be
+                automatically linked with that exam and saved
+                in Firebase Firestore.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ======================================================
+     SCRIPT
+====================================================== -->
+
+<script
+    type="module"
+    src="./js/add-category-v2.js"
+></script>
+
+</body>
+
+</html>

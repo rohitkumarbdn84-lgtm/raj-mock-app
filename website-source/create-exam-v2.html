@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Exam & Category - Raj Mock Test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/create-exam-v2.css"
+    >
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     TOPBAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            🏫
+        </div>
+
+        <div>
+
+            <h2>
+                Raj Mock Test
+            </h2>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="backBtn"
+        class="back-btn"
+    >
+        ← Dashboard
+    </button>
+
+</header>
+
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <div class="eyebrow">
+                EXAM MANAGEMENT
+            </div>
+
+            <h1>
+                Create Exam & Category
+            </h1>
+
+            <p>
+                Create your exam and categories from one place.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         EXAM SECTION
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>
+                    Choose Your Exam
+                </h2>
+
+                <p>
+                    Select an existing exam or create a new one.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <!-- EXISTING EXAM -->
+
+            <div class="form-group">
+
+                <label for="examSelect">
+                    Existing Exam
+                </label>
+
+                <select id="examSelect">
+
+                    <option value="">
+                        Select Exam
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- NEW EXAM NAME -->
+
+            <div class="form-group">
+
+                <label for="examName">
+                    New Exam Name
+                </label>
+
+                <input
+                    type="text"
+                    id="examName"
+                    placeholder="e.g. Railway Technician"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- ICON -->
+
+            <div class="form-group">
+
+                <label for="examIcon">
+                    Exam Icon
+                </label>
+
+                <input
+                    type="text"
+                    id="examIcon"
+                    value="📚"
+                    maxlength="5"
+                    placeholder="📚"
+                >
+
+            </div>
+
+
+            <!-- ORDER -->
+
+            <div class="form-group">
+
+                <label for="examOrder">
+                    Display Order
+                </label>
+
+                <input
+                    type="number"
+                    id="examOrder"
+                    min="1"
+                    value="1"
+                >
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form-group full">
+
+                <label for="examDescription">
+                    Exam Description
+                </label>
+
+                <textarea
+                    id="examDescription"
+                    rows="3"
+                    placeholder="Enter exam description..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                id="createExamBtn"
+                class="primary-btn"
+            >
+                ➕ Create Exam
+            </button>
+
+        </div>
+
+
+        <div
+            id="examMessage"
+            class="message"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CATEGORY SECTION
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                📂
+            </div>
+
+            <div>
+
+                <h2>
+                    Choose Category
+                </h2>
+
+                <p>
+                    Select an exam and create its category.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <!-- CATEGORY EXAM -->
+
+            <div class="form-group full">
+
+                <label for="categoryExamSelect">
+                    Choose Your Exam
+                </label>
+
+                <select id="categoryExamSelect">
+
+                    <option value="">
+                        Select Exam
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CATEGORY NAME -->
+
+            <div class="form-group">
+
+                <label for="categoryName">
+                    Category Name
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryName"
+                    placeholder="e.g. Electronics"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- CATEGORY ICON -->
+
+            <div class="form-group">
+
+                <label for="categoryIcon">
+                    Category Icon
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryIcon"
+                    value="📂"
+                    maxlength="5"
+                    placeholder="📂"
+                >
+
+            </div>
+
+
+            <!-- CATEGORY ORDER -->
+
+            <div class="form-group">
+
+                <label for="categoryOrder">
+                    Display Order
+                </label>
+
+                <input
+                    type="number"
+                    id="categoryOrder"
+                    min="1"
+                    value="1"
+                >
+
+            </div>
+
+
+            <!-- CATEGORY DESCRIPTION -->
+
+            <div class="form-group full">
+
+                <label for="categoryDescription">
+                    Category Description
+                </label>
+
+                <textarea
+                    id="categoryDescription"
+                    rows="3"
+                    placeholder="Enter category description..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                id="createCategoryBtn"
+                class="secondary-btn"
+            >
+                ➕ Create Category
+            </button>
+
+        </div>
+
+
+        <div
+            id="categoryMessage"
+            class="message"
+        ></div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CREATED DATA
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                📋
+            </div>
+
+            <div>
+
+                <h2>
+                    Available Exams
+                </h2>
+
+                <p>
+                    Exams currently available in Firebase.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="examList"
+            class="exam-list"
+        >
+
+            <div class="empty-box">
+
+                <div>
+                    📚
+                </div>
+
+                <h3>
+                    Loading Exams...
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script
+    type="module"
+    src="./js/create-exam-v2.js"
+></script>
+
+
+</body>
+
+</html>

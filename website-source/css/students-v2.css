@@ -1,0 +1,716 @@
+/* ==========================================================
+   RAJ MOCK TEST V2.0
+   STUDENT MANAGEMENT
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #111827;
+    color: white;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.logo {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo h2 {
+    font-size: 21px;
+}
+
+.logo p {
+    margin-top: 5px;
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 15px 10px;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    color: #d1d5db;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .2s;
+    font-size: 14px;
+}
+
+.sidebar a:hover,
+.sidebar li.active a {
+    background: #2563eb;
+    color: white;
+}
+
+.sidebar i {
+    width: 20px;
+    text-align: center;
+}
+
+
+/* ================= MAIN ================= */
+
+.main {
+    margin-left: 250px;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+
+/* ================= TOPBAR ================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    font-size: 27px;
+}
+
+.topbar p {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.refresh-btn {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.refresh-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* ================= STATS ================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.05);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.stat-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 24px;
+    margin-top: 3px;
+}
+
+
+/* ================= CONTROLS ================= */
+
+.controls {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.04);
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+}
+
+.search-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.search-box input,
+.controls select {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #dbe1ea;
+    border-radius: 9px;
+    background: white;
+    padding: 0 13px;
+    font-family: inherit;
+    outline: none;
+}
+
+.search-box input {
+    padding-left: 40px;
+}
+
+.search-box input:focus,
+.controls select:focus {
+    border-color: #2563eb;
+}
+
+
+/* ================= LOADING ================= */
+
+.loading-box {
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.loading-box i {
+    margin-right: 7px;
+}
+
+
+/* ================= EMPTY ================= */
+
+.empty-box {
+    display: none;
+    background: white;
+    border-radius: 14px;
+    text-align: center;
+    padding: 50px 20px;
+    color: #6b7280;
+}
+
+.empty-box div {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.empty-box h3 {
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+
+/* ================= STUDENT GRID ================= */
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+
+/* ================= STUDENT CARD ================= */
+
+.student-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    transition: .2s;
+}
+
+.student-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.student-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.student-info h3 {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.student-info p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.plan-badge,
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.plan-premium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.plan-free {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.status-active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-blocked {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.student-details {
+    border-top: 1px solid #edf0f4;
+    margin-top: 17px;
+    padding-top: 15px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 9px;
+    font-size: 12px;
+}
+
+.detail-row span {
+    color: #6b7280;
+}
+
+.detail-row strong {
+    text-align: right;
+    word-break: break-word;
+}
+
+.expiry-active {
+    color: #15803d;
+}
+
+.expiry-expired {
+    color: #dc2626;
+}
+
+.student-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.student-actions button {
+    flex: 1;
+    border: none;
+    padding: 9px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.view-btn {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.block-card-btn {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.unblock-card-btn {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,.2);
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f6;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-avatar {
+    width: 70px;
+    height: 70px;
+    margin: 5px auto 12px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.modal-box h2 {
+    font-size: 21px;
+}
+
+.modal-details {
+    margin-top: 20px;
+    text-align: left;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.modal-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 9px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 12px;
+}
+
+.modal-row:last-child {
+    border-bottom: none;
+}
+
+.modal-row span {
+    color: #6b7280;
+}
+
+.modal-row strong {
+    text-align: right;
+    word-break: break-word;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.modal-actions button {
+    flex: 1;
+    border: none;
+    padding: 11px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.block-btn {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* ================= TOAST ================= */
+
+.toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: #111827;
+    color: white;
+    padding: 13px 18px;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: .25s;
+    z-index: 3000;
+    font-size: 13px;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 11px;
+    padding: 30px 10px 10px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .logo h2 {
+        font-size: 0;
+    }
+
+    .logo h2:first-letter {
+        font-size: 25px;
+    }
+
+    .logo p,
+    .sidebar span {
+        display: none;
+    }
+
+    .sidebar a {
+        justify-content: center;
+        padding: 14px 5px;
+    }
+
+    .main {
+        margin-left: 70px;
+        padding: 18px;
+    }
+
+    .student-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .refresh-btn {
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 14px;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .stat-card strong {
+        font-size: 20px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .modal-box {
+        padding: 25px 18px;
+    }
+
+}
+/* ==========================================================
+   NO SIDEBAR - STUDENT MANAGEMENT
+   ========================================================== */
+
+.sidebar,
+.admin-sidebar,
+.side-bar,
+#sidebar {
+    display: none !important;
+}
+
+
+/* Main content full width */
+
+.main-content,
+.main,
+.content,
+.dashboard-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+}
+
+
+/* Page full width */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+
+/* Keep same card design */
+
+.students-section {
+    max-width: 1400px;
+    margin: 22px auto 0;
+}
+
+
+/* Header full width */
+
+.topbar {
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* Stats full width */
+
+.stats-grid {
+    max-width: 1400px;
+    margin: 22px auto;
+}
+
+
+/* Footer */
+
+footer {
+    max-width: 1400px;
+    margin: 25px auto 0;
+}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exam | Raj Mock Test V2.0</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="css/exam-v2.css">
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- =================================================
+     TOP HEADER
+================================================= -->
+
+<header class="exam-header">
+
+    <div class="exam-brand">
+
+        <div class="exam-logo">
+            🎓
+        </div>
+
+        <div>
+
+            <strong>
+                RAJ MOCK TEST
+            </strong>
+
+            <small id="testTitle">
+                Loading Test...
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- TIMER -->
+
+    <div class="timer-box" id="timerBox">
+
+        <span>
+            ⏱️
+        </span>
+
+        <div>
+
+            <small>
+                TIME LEFT
+            </small>
+
+            <strong id="timer">
+                60:00
+            </strong>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =================================================
+     MAIN EXAM
+================================================= -->
+
+<main class="exam-container">
+
+
+    <!-- =============================================
+         LEFT QUESTION AREA
+    ============================================== -->
+
+    <section class="question-section">
+
+
+        <!-- QUESTION TOP -->
+
+        <div class="question-top">
+
+            <span id="questionNumber">
+                Question 1
+            </span>
+
+            <button
+                class="mark-btn"
+                id="markBtn"
+                onclick="toggleMark()">
+
+                🔖 Mark for Review
+
+            </button>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-area">
+
+            <div class="progress-text">
+
+                <span>
+                    Progress
+                </span>
+
+                <span id="progressText">
+                    1 / 50
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+            <h2 id="questionText">
+                Loading question...
+            </h2>
+
+
+            <!-- OPTIONS -->
+
+            <div
+                id="optionsContainer"
+                class="options">
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="question-navigation">
+
+            <button
+                class="previous-btn"
+                id="previousBtn"
+                onclick="previousQuestion()">
+
+                ← Previous
+
+            </button>
+
+
+            <button
+                class="next-btn"
+                id="nextBtn"
+                onclick="nextQuestion()">
+
+                Next →
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =============================================
+         RIGHT SIDEBAR
+    ============================================== -->
+
+    <aside class="question-sidebar">
+
+
+        <div class="sidebar-title">
+
+            <h3>
+                Questions
+            </h3>
+
+            <span id="totalQuestions">
+                50
+            </span>
+
+        </div>
+
+
+        <!-- LEGEND -->
+
+        <div class="legend">
+
+            <div>
+                <span class="legend-box answered">
+                </span>
+
+                Answered
+            </div>
+
+
+            <div>
+                <span class="legend-box marked">
+                </span>
+
+                Review
+            </div>
+
+
+            <div>
+                <span class="legend-box unanswered">
+                </span>
+
+                Not Answered
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION PALETTE -->
+
+        <div
+            id="questionPalette"
+            class="question-palette">
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="attempt-summary">
+
+            <div>
+
+                <span>
+                    Answered
+                </span>
+
+                <strong id="answeredCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Review
+                </span>
+
+                <strong id="markedCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Remaining
+                </span>
+
+                <strong id="remainingCount">
+                    50
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+            class="submit-btn"
+            onclick="confirmSubmit()">
+
+            Submit Test
+
+        </button>
+
+
+    </aside>
+
+</main>
+
+
+
+<!-- =================================================
+     SUBMIT MODAL
+================================================= -->
+
+<div
+    class="modal-overlay"
+    id="submitModal">
+
+
+    <div class="submit-modal">
+
+
+        <div class="modal-icon">
+            📝
+        </div>
+
+
+        <h2>
+            Submit Test?
+        </h2>
+
+
+        <p>
+            Are you sure you want to submit your test?
+        </p>
+
+
+        <div class="modal-stats">
+
+            <div>
+
+                <strong id="modalAnswered">
+                    0
+                </strong>
+
+                <span>
+                    Answered
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="modalRemaining">
+                    0
+                </strong>
+
+                <span>
+                    Remaining
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-buttons">
+
+            <button
+                class="cancel-btn"
+                onclick="closeModal()">
+
+                Continue Test
+
+            </button>
+
+
+            <button
+                class="confirm-btn"
+                onclick="submitTest()">
+
+                Yes, Submit
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script
+    type="module"
+    src="./js/exam-v2.js">
+</script>
+
+</body>
+
+</html>

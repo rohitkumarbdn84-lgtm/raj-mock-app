@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Student Registration | Raj Mock Test V2.0</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef4ff,
+            #f8fafc
+        );
+
+    padding:20px;
+
+}
+
+.register-wrapper{
+
+    width:100%;
+    max-width:460px;
+
+}
+
+.logo-box{
+
+    text-align:center;
+    margin-bottom:20px;
+
+}
+
+.logo-icon{
+
+    width:65px;
+    height:65px;
+
+    margin:auto;
+
+    border-radius:18px;
+
+    background:#2563eb;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.25);
+
+}
+
+.logo-box h1{
+
+    margin-top:10px;
+
+    font-size:23px;
+
+    color:#111827;
+
+}
+
+.logo-box p{
+
+    color:#6b7280;
+
+    font-size:13px;
+
+}
+
+.register-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:
+        0 15px 45px rgba(15,23,42,.10);
+
+}
+
+.register-card h2{
+
+    text-align:center;
+
+    font-size:22px;
+
+    color:#111827;
+
+    margin-bottom:5px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#6b7280;
+
+    font-size:13px;
+
+    margin-bottom:25px;
+
+}
+
+.form-group{
+
+    margin-bottom:16px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#374151;
+
+    margin-bottom:7px;
+
+}
+
+.input-box{
+
+    position:relative;
+
+}
+
+.input-icon{
+
+    position:absolute;
+
+    left:13px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:16px;
+
+}
+
+.input-box input,
+.input-box select{
+
+    width:100%;
+
+    height:48px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    outline:none;
+
+    padding:0 13px 0 42px;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    background:#fff;
+
+}
+
+.input-box input:focus,
+.input-box select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,.10);
+
+}
+
+.password-note{
+
+    color:#9ca3af;
+
+    font-size:10px;
+
+    margin-top:5px;
+
+}
+
+.message{
+
+    display:none;
+
+    margin-bottom:15px;
+
+    padding:11px;
+
+    border-radius:9px;
+
+    font-size:12px;
+
+    text-align:center;
+
+}
+
+.message.error{
+
+    display:block;
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+}
+
+.message.success{
+
+    display:block;
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+
+.register-btn{
+
+    width:100%;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.register-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.register-btn:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+}
+
+.login-text{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:12px;
+
+    color:#6b7280;
+
+}
+
+.login-text a{
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.footer{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#9ca3af;
+
+    font-size:11px;
+
+}
+
+@media(max-width:450px){
+
+    body{
+        padding:15px;
+    }
+
+    .register-card{
+        padding:23px;
+    }
+
+}
+
+</style>
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<div class="register-wrapper">
+
+
+    <!-- LOGO -->
+
+    <div class="logo-box">
+
+        <div class="logo-icon">
+            🎓
+        </div>
+
+        <h1>
+            RAJ MOCK TEST
+        </h1>
+
+        <p>
+            Student Portal V2.0
+        </p>
+
+    </div>
+
+
+    <!-- REGISTER CARD -->
+
+    <div class="register-card">
+
+        <h2>
+            Create Student Account
+        </h2>
+
+        <p class="subtitle">
+            Register once and start your preparation
+        </p>
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="message"
+            class="message">
+        </div>
+
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+            <label for="name">
+                Full Name
+            </label>
+
+            <div class="input-box">
+
+                <span class="input-icon">
+                    👤
+                </span>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    autocomplete="name">
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE -->
+
+        <div class="form-group">
+
+            <label for="mobile">
+                Mobile Number
+            </label>
+
+            <div class="input-box">
+
+                <span class="input-icon">
+                    📱
+                </span>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Enter 10 digit mobile number"
+                    maxlength="10"
+                    autocomplete="tel">
+
+            </div>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+            <label for="email">
+                Email Address
+                <small>(Optional)</small>
+            </label>
+
+            <div class="input-box">
+
+                <span class="input-icon">
+                    📧
+                </span>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter email address"
+                    autocomplete="email">
+
+            </div>
+
+        </div>
+
+
+        <!-- COURSE -->
+
+        <div class="form-group">
+
+            <label for="course">
+                Course / Preparation
+            </label>
+
+            <div class="input-box">
+
+                <span class="input-icon">
+                    📚
+                </span>
+
+                <select id="course">
+
+                    <option value="">
+                        Select Course
+                    </option>
+
+                    <option value="Railway">
+                        Railway
+                    </option>
+
+                    <option value="SSC">
+                        SSC
+                    </option>
+
+                    <option value="BTSC">
+                        BTSC
+                    </option>
+
+                    <option value="ITI">
+                        ITI
+                    </option>
+
+                    <option value="Electronics">
+                        Electronics
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+            <label for="password">
+                Password
+            </label>
+
+            <div class="input-box">
+
+                <span class="input-icon">
+                    🔐
+                </span>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create password"
+                    autocomplete="new-password">
+
+            </div>
+
+            <div class="password-note">
+                Minimum 6 characters
+            </div>
+
+        </div>
+
+
+        <!-- CONFIRM PASSWORD -->
+
+        <div class="form-group">
+
+            <label for="confirmPassword">
+                Confirm Password
+            </label>
+
+            <div class="input-box">
+
+                <span class="input-icon">
+                    🔑
+                </span>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Re-enter password"
+                    autocomplete="new-password">
+
+            </div>
+
+        </div>
+
+
+        <!-- REGISTER BUTTON -->
+
+        <button
+            type="button"
+            id="registerBtn"
+            class="register-btn">
+
+            📝 Create Account
+
+        </button>
+
+
+        <!-- LOGIN -->
+
+        <div class="login-text">
+
+            Already have an account?
+
+            <a href="student-login-v2.html">
+                Login Here
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        © 2026 Raj Mock Test V2.0
+
+    </div>
+
+
+</div>
+
+
+
+<script type="module">
+
+import { db } from "./js/firebase.js";
+
+import {
+    collection,
+    query,
+    where,
+    getDocs,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+const nameInput =
+    document.getElementById("name");
+
+const mobileInput =
+    document.getElementById("mobile");
+
+const emailInput =
+    document.getElementById("email");
+
+const courseInput =
+    document.getElementById("course");
+
+const passwordInput =
+    document.getElementById("password");
+
+const confirmPasswordInput =
+    document.getElementById("confirmPassword");
+
+const registerBtn =
+    document.getElementById("registerBtn");
+
+const message =
+    document.getElementById("message");
+
+
+// ==========================================
+// MESSAGE
+// ==========================================
+
+function showMessage(text, type="error"){
+
+    message.textContent = text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+// ==========================================
+// REGISTER
+// ==========================================
+
+async function registerStudent(){
+
+    const name =
+        nameInput.value.trim();
+
+    const mobile =
+        mobileInput.value.trim();
+
+    const email =
+        emailInput.value.trim();
+
+    const course =
+        courseInput.value.trim();
+
+    const password =
+        passwordInput.value;
+
+    const confirmPassword =
+        confirmPasswordInput.value;
+
+
+    // ======================================
+    // VALIDATION
+    // ======================================
+
+    if(!name){
+
+        showMessage(
+            "Please enter your full name."
+        );
+
+        return;
+
+    }
+
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+
+        showMessage(
+            "Please enter a valid 10 digit mobile number."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        email &&
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ){
+
+        showMessage(
+            "Please enter a valid email address."
+        );
+
+        return;
+
+    }
+
+
+    if(!course){
+
+        showMessage(
+            "Please select your course."
+        );
+
+        return;
+
+    }
+
+
+    if(password.length < 6){
+
+        showMessage(
+            "Password must be at least 6 characters."
+        );
+
+        return;
+
+    }
+
+
+    if(password !== confirmPassword){
+
+        showMessage(
+            "Passwords do not match."
+        );
+
+        return;
+
+    }
+
+
+    registerBtn.disabled = true;
+
+    registerBtn.textContent =
+        "⏳ Creating Account...";
+
+
+    try{
+
+        // ==================================
+        // CHECK OLD STUDENT
+        // ==================================
+
+        const studentsRef =
+            collection(
+                db,
+                "students"
+            );
+
+
+        const mobileQuery =
+            query(
+
+                studentsRef,
+
+                where(
+                    "mobile",
+                    "==",
+                    mobile
+                )
+
+            );
+
+
+        const existingStudents =
+            await getDocs(
+                mobileQuery
+            );
+
+
+        if(!existingStudents.empty){
+
+            showMessage(
+                "⚠️ This mobile number is already registered. Please Login instead."
+            );
+
+            registerBtn.disabled = false;
+
+            registerBtn.textContent =
+                "📝 Create Account";
+
+            return;
+
+        }
+
+
+        // ==================================
+        // CREATE STUDENT
+        // ==================================
+
+        const studentData = {
+
+            name:
+                name,
+
+            mobile:
+                mobile,
+
+            password:
+                password,
+
+            email:
+                email,
+
+            course:
+                course,
+
+            photo:
+                "images/default-avatar.png",
+
+            status:
+                "active",
+
+            createdAt:
+                serverTimestamp()
+
+        };
+
+
+        const studentDoc =
+            await addDoc(
+
+                studentsRef,
+
+                studentData
+
+            );
+
+
+        console.log(
+            "✅ Student Registered:",
+            studentDoc.id
+        );
+
+
+        // ==================================
+        // SAVE LOGIN DATA
+        // ==================================
+
+        sessionStorage.setItem(
+            "student",
+            JSON.stringify({
+
+                id:
+                    studentDoc.id,
+
+                name:
+                    name,
+
+                mobile:
+                    mobile,
+
+                email:
+                    email,
+
+                course:
+                    course,
+
+                photo:
+                    "images/default-avatar.png"
+
+            })
+        );
+
+
+        localStorage.setItem(
+            "studentId",
+            studentDoc.id
+        );
+
+        localStorage.setItem(
+            "studentName",
+            name
+        );
+
+        localStorage.setItem(
+            "studentMobile",
+            mobile
+        );
+
+        localStorage.setItem(
+            "studentEmail",
+            email
+        );
+
+
+        sessionStorage.setItem(
+            "studentId",
+            studentDoc.id
+        );
+
+        sessionStorage.setItem(
+            "studentName",
+            name
+        );
+
+        sessionStorage.setItem(
+            "studentMobile",
+            mobile
+        );
+
+
+        showMessage(
+            "✅ Account created successfully!",
+            "success"
+        );
+
+
+        // ==================================
+        // DASHBOARD
+        // ==================================
+
+        setTimeout(
+            function(){
+
+                window.location.href =
+                    "student-dashboard-v2.html";
+
+            },
+            700
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "REGISTRATION ERROR:",
+            error
+        );
+
+
+        showMessage(
+            "❌ Registration failed: " +
+            error.message
+        );
+
+
+        registerBtn.disabled = false;
+
+        registerBtn.textContent =
+            "📝 Create Account";
+
+    }
+
+}
+
+
+// ==========================================
+// BUTTON
+// ==========================================
+
+registerBtn.addEventListener(
+    "click",
+    registerStudent
+);
+
+
+// ==========================================
+// ENTER KEY
+// ==========================================
+
+confirmPasswordInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            registerStudent();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

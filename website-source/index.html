@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raj Mock Test V2.0 | Online Mock Tests & Exam Preparation</title>
+
+    <meta name="description"
+        content="Raj Mock Test V2.0 - Practice mock tests for Railway, SSC, ITI, CITS, BTSC, DSSSB and other competitive exams.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #c99a2e;
+            --gold-dark: #9a741d;
+            --gold-light: #f3df9b;
+            --cream: #fffaf0;
+            --cream-2: #fffdf8;
+            --white: #ffffff;
+            --text: #302a20;
+            --text-light: #746b5d;
+            --border: #eadfca;
+            --green: #26834c;
+            --shadow: 0 12px 35px rgba(91, 67, 20, 0.09);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--cream-2);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 253, 248, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: linear-gradient(
+                145deg,
+                #e7c866,
+                #b98a20
+            );
+
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+
+            box-shadow:
+                0 7px 18px rgba(201, 154, 46, 0.28);
+        }
+
+        .brand-text h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: 17px;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .brand-text span {
+            color: var(--gold-dark);
+        }
+
+        .brand-text small {
+            display: block;
+            color: var(--text-light);
+            font-size: 10px;
+            letter-spacing: 1.4px;
+            margin-top: 3px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-dark);
+            background: #fff7df;
+        }
+
+        .admin-btn {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 75px 0 70px;
+
+            background:
+                radial-gradient(
+                    circle at 8% 15%,
+                    rgba(218, 177, 67, 0.16),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 92% 10%,
+                    rgba(231, 200, 102, 0.14),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    180deg,
+                    #fffdf8 0%,
+                    #fffaf0 100%
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            border: 1px solid rgba(201, 154, 46, 0.13);
+            border-radius: 50%;
+            right: -80px;
+            top: 20px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            border: 1px solid rgba(201, 154, 46, 0.12);
+            border-radius: 50%;
+            left: -70px;
+            bottom: -50px;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 13px;
+            border-radius: 50px;
+
+            background: #fff5d7;
+            border: 1px solid #ead79e;
+
+            color: var(--gold-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "✦";
+            font-size: 13px;
+        }
+
+        .hero h2 {
+            margin-top: 18px;
+
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.08;
+            letter-spacing: -2.3px;
+            font-weight: 800;
+        }
+
+        .hero h2 span {
+            color: var(--gold-dark);
+        }
+
+        .hero-description {
+            max-width: 610px;
+            margin-top: 20px;
+
+            color: var(--text-light);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            min-height: 48px;
+            padding: 0 21px;
+            border-radius: 12px;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d8b34d,
+                    #b88920
+                );
+
+            box-shadow:
+                0 10px 22px rgba(180, 135, 32, 0.25);
+        }
+
+        .btn-primary:hover {
+            box-shadow:
+                0 13px 27px rgba(180, 135, 32, 0.31);
+        }
+
+        .btn-outline {
+            color: var(--gold-dark);
+            background: white;
+            border: 1px solid #dccb9e;
+        }
+
+        .hero-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-top: 20px;
+
+            color: #7d735f;
+            font-size: 12px;
+        }
+
+        .hero-note strong {
+            color: var(--green);
+        }
+
+        /* =========================
+           HERO VISUAL
+        ========================= */
+
+        .exam-card {
+            position: relative;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            padding: 25px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .exam-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+
+            height: 5px;
+
+            border-radius: 24px 24px 0 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a97c1d,
+                    #e3c568,
+                    #a97c1d
+                );
+        }
+
+        .exam-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .exam-card-title {
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .live-badge {
+            padding: 6px 9px;
+            border-radius: 50px;
+
+            background: #edf8f0;
+            color: var(--green);
+
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .test-preview {
+            padding: 17px;
+            border-radius: 15px;
+
+            background: #fffaf0;
+            border: 1px solid #eee0bd;
+        }
+
+        .test-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 13px 0;
+            border-bottom: 1px dashed #e5d8b9;
+        }
+
+        .test-row:last-child {
+            border-bottom: 0;
+        }
+
+        .test-icon {
+            width: 38px;
+            height: 38px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: #fff0c4;
+            color: var(--gold-dark);
+            font-size: 18px;
+        }
+
+        .test-info {
+            flex: 1;
+        }
+
+        .test-info strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .test-info small {
+            color: var(--text-light);
+            font-size: 10px;
+        }
+
+        .test-arrow {
+            color: var(--gold-dark);
+            font-weight: 800;
+        }
+
+        .mini-progress {
+            margin-top: 18px;
+        }
+
+        .mini-progress-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+
+            color: var(--text-light);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .progress {
+            height: 7px;
+            border-radius: 20px;
+            background: #f0eadb;
+            overflow: hidden;
+        }
+
+        .progress span {
+            display: block;
+            width: 78%;
+            height: 100%;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #bd8d23,
+                    #e3c568
+                );
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats-section {
+            margin-top: -18px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            padding: 20px;
+
+            box-shadow: 0 7px 25px rgba(75, 55, 18, 0.06);
+        }
+
+        .stat-card strong {
+            display: block;
+
+            color: var(--gold-dark);
+
+            font-family: "Poppins", sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .stat-card span {
+            color: var(--text-light);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+
+            margin-bottom: 28px;
+        }
+
+        .section-heading h3 {
+            font-family: "Poppins", sans-serif;
+            font-size: 29px;
+            letter-spacing: -0.8px;
+        }
+
+        .section-heading p {
+            max-width: 550px;
+            margin-top: 7px;
+
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .section-link {
+            color: var(--gold-dark);
+            font-size: 13px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           EXAM CATEGORIES
+        ========================= */
+
+        .categories-section {
+            background: #fffdf8;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .category-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            padding: 20px;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+
+            border-color: #d7b75d;
+
+            box-shadow:
+                0 13px 30px rgba(83, 61, 20, 0.08);
+        }
+
+        .category-icon {
+            width: 47px;
+            height: 47px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 13px;
+
+            background: #fff4d5;
+            color: var(--gold-dark);
+
+            font-size: 21px;
+        }
+
+        .category-card h4 {
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .category-card p {
+            margin-top: 2px;
+
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        /* =========================
+           JOBS
+        ========================= */
+
+        .jobs-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #fff8e8,
+                    #fffdf8
+                );
+        }
+
+        .jobs-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .new-label {
+            padding: 5px 8px;
+            border-radius: 6px;
+
+            background: #fff0bf;
+            color: #8d6818;
+
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 0.6px;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .job-card {
+            position: relative;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            padding: 21px;
+
+            box-shadow: 0 7px 25px rgba(75, 55, 18, 0.05);
+
+            transition: 0.2s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(75, 55, 18, 0.09);
+        }
+
+        .job-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+        }
+
+        .job-logo {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #fff5d7;
+            color: var(--gold-dark);
+
+            font-size: 18px;
+        }
+
+        .job-tag {
+            padding: 5px 8px;
+            border-radius: 6px;
+
+            background: #edf8f0;
+            color: var(--green);
+
+            font-size: 9px;
+            font-weight: 800;
+        }
+
+        .job-card h4 {
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        .job-card p {
+            margin-top: 6px;
+
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        .job-details {
+            display: flex;
+            gap: 14px;
+
+            margin-top: 15px;
+            padding-top: 13px;
+
+            border-top: 1px solid #f0eadc;
+
+            color: var(--text-light);
+            font-size: 10px;
+        }
+
+        .job-button {
+            display: inline-block;
+
+            margin-top: 16px;
+
+            color: var(--gold-dark);
+
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        /* =========================
+           WHY US
+        ========================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .why-title h3 {
+            font-family: "Poppins", sans-serif;
+            font-size: 32px;
+            line-height: 1.25;
+        }
+
+        .why-title h3 span {
+            color: var(--gold-dark);
+        }
+
+        .why-title p {
+            margin-top: 15px;
+
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .feature {
+            padding: 20px;
+
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .feature-icon {
+            font-size: 21px;
+        }
+
+        .feature h4 {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .feature p {
+            margin-top: 5px;
+
+            color: var(--text-light);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta-section {
+            padding-top: 15px;
+            padding-bottom: 80px;
+        }
+
+        .cta {
+            position: relative;
+            overflow: hidden;
+
+            padding: 42px 45px;
+
+            border-radius: 23px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff4cf,
+                    #fffdf7
+                );
+
+            border: 1px solid #e3d19f;
+        }
+
+        .cta::after {
+            content: "✦";
+
+            position: absolute;
+            right: 45px;
+            top: 20px;
+
+            font-size: 100px;
+
+            color: rgba(190, 145, 37, 0.09);
+        }
+
+        .cta h3 {
+            position: relative;
+            z-index: 2;
+
+            font-family: "Poppins", sans-serif;
+            font-size: 27px;
+        }
+
+        .cta p {
+            position: relative;
+            z-index: 2;
+
+            max-width: 650px;
+            margin-top: 7px;
+
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .cta .btn {
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 28px 0;
+
+            background: #fffaf0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .footer-brand span {
+            color: var(--gold-dark);
+        }
+
+        .footer-copy {
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-dark);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero {
+                padding-top: 55px;
+            }
+
+            .hero h2 {
+                font-size: 44px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-grid,
+            .jobs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .container {
+                width: min(92%, 540px);
+            }
+
+            .navbar {
+                height: 68px;
+            }
+
+            .brand-logo {
+                width: 39px;
+                height: 39px;
+                border-radius: 11px;
+            }
+
+            .brand-text h1 {
+                font-size: 14px;
+            }
+
+            .brand-text small {
+                font-size: 8px;
+            }
+
+            .nav-links a {
+                padding: 8px 9px;
+                font-size: 11px;
+            }
+
+            .nav-links a:first-child {
+                display: none;
+            }
+
+            .hero {
+                padding: 48px 0 55px;
+            }
+
+            .hero h2 {
+                font-size: 37px;
+                letter-spacing: -1.5px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-card {
+                padding: 16px;
+            }
+
+            .stat-card strong {
+                font-size: 21px;
+            }
+
+            section {
+                padding: 58px 0;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-link {
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            .section-heading h3 {
+                font-size: 24px;
+            }
+
+            .category-grid,
+            .jobs-grid,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .why-title h3 {
+                font-size: 27px;
+            }
+
+            .cta {
+                padding: 30px 25px;
+            }
+
+            .cta h3 {
+                font-size: 23px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+        <div class="container navbar">
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-logo">
+                    🎓
+                </div>
+
+                <div class="brand-text">
+                    <h1>RAJ MOCK <span>TEST</span></h1>
+                    <small>V2.0 • SMART EXAM PREPARATION</small>
+                </div>
+
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="#exams">
+                    Exams
+                </a>
+
+                <a href="#jobs">
+                    Latest Jobs
+                </a>
+
+                <a href="student-login-v2.html"
+                   class="btn btn-primary"
+                   style="min-height:40px;">
+                    Student Login
+                </a>
+
+                <a href="admin-login-v2.html"
+                   class="admin-btn">
+                    Admin
+                </a>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Smart Practice Platform
+                    </div>
+
+                    <h2>
+                        Prepare Better.<br>
+                        <span>Perform Better.</span>
+                    </h2>
+
+                    <p class="hero-description">
+                        Practice mock tests, improve your accuracy and
+                        prepare for competitive exams with Raj Mock Test V2.0.
+                        Railway, SSC, ITI, CITS, BTSC, DSSSB and more.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="student-login-v2.html"
+                           class="btn btn-primary">
+                            🎯 Start Practice
+                        </a>
+
+                        <a href="#exams"
+                           class="btn btn-outline">
+                            📚 Explore Exams
+                        </a>
+
+                    </div>
+
+                    <div class="hero-note">
+                        ✓ Easy to use &nbsp; • &nbsp;
+                        ✓ Practice anytime &nbsp; • &nbsp;
+                        <strong>✓ Updated regularly</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- HERO EXAM CARD -->
+
+                <div class="exam-card">
+
+                    <div class="exam-card-top">
+
+                        <div class="exam-card-title">
+                            Today's Practice
+                        </div>
+
+                        <div class="live-badge">
+                            ● Active
+                        </div>
+
+                    </div>
+
+
+                    <div class="test-preview">
+
+                        <div class="test-row">
+
+                            <div class="test-icon">
+                                🚆
+                            </div>
+
+                            <div class="test-info">
+                                <strong>Railway Mock Test</strong>
+                                <small>50 Questions • 60 Minutes</small>
+                            </div>
+
+                            <div class="test-arrow">
+                                →
+                            </div>
+
+                        </div>
+
+
+                        <div class="test-row">
+
+                            <div class="test-icon">
+                                ⚡
+                            </div>
+
+                            <div class="test-info">
+                                <strong>Electrical / Electronics</strong>
+                                <small>Practice Set • MCQ</small>
+                            </div>
+
+                            <div class="test-arrow">
+                                →
+                            </div>
+
+                        </div>
+
+
+                        <div class="test-row">
+
+                            <div class="test-icon">
+                                📝
+                            </div>
+
+                            <div class="test-info">
+                                <strong>SSC Practice</strong>
+                                <small>General Awareness • English</small>
+                            </div>
+
+                            <div class="test-arrow">
+                                →
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-progress">
+
+                        <div class="mini-progress-top">
+                            <span>Practice Progress</span>
+                            <strong>78%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================== -->
+
+        <div class="stats-section">
+
+            <div class="container">
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <strong>1000+</strong>
+                        <span>Practice Questions</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <strong>50+</strong>
+                        <span>Mock Tests</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <strong>10+</strong>
+                        <span>Exam Categories</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <strong>24×7</strong>
+                        <span>Online Practice</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             EXAM CATEGORIES
+        ========================== -->
+
+        <section class="categories-section" id="exams">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h3>Explore Exam Categories</h3>
+
+                        <p>
+                            Choose your exam category and start practicing
+                            with focused mock tests.
+                        </p>
+                    </div>
+
+                    <a href="student-login-v2.html"
+                       class="section-link">
+                        View All Exams →
+                    </a>
+
+                </div>
+
+
+                <div class="category-grid">
+
+                    <a href="student-login-v2.html"
+                       class="category-card">
+
+                        <div class="category-icon">
+                            🚆
+                        </div>
+
+                        <div>
+                            <h4>Railway</h4>
+                            <p>RRB • Technical • General</p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="student-login-v2.html"
+                       class="category-card">
+
+                        <div class="category-icon">
+                            📋
+                        </div>
+
+                        <div>
+                            <h4>SSC</h4>
+                            <p>SSC • CGL • CHSL • Phase</p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="student-login-v2.html"
+                       class="category-card">
+
+                        <div class="category-icon">
+                            🔧
+                        </div>
+
+                        <div>
+                            <h4>ITI</h4>
+                            <p>Trade Theory • MCQ Practice</p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="student-login-v2.html"
+                       class="category-card">
+
+                        <div class="category-icon">
+                            🎓
+                        </div>
+
+                        <div>
+                            <h4>CITS</h4>
+                            <p>Instructor • Trade Tests</p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="student-login-v2.html"
+                       class="category-card">
+
+                        <div class="category-icon">
+                            ⚡
+                        </div>
+
+                        <div>
+                            <h4>BTSC</h4>
+                            <p>Instructor • Technical Exams</p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="student-login-v2.html"
+                       class="category-card">
+
+                        <div class="category-icon">
+                            🏛️
+                        </div>
+
+                        <div>
+                            <h4>DSSSB</h4>
+                            <p>Delhi Govt. Recruitment Exams</p>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LATEST JOBS
+        ========================== -->
+
+        <section class="jobs-section" id="jobs">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="jobs-header">
+
+                            <h3>Latest Jobs & Vacancies</h3>
+
+                            <span class="new-label">
+                                NEW
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Get important recruitment updates, vacancies,
+                            eligibility and exam information in one place.
+                        </p>
+
+                    </div>
+
+                    <a href="student-login-v2.html"
+                       class="section-link">
+                        View All Jobs →
+                    </a>
+
+                </div>
+
+
+                <!--
+                    FUTURE FIREBASE JOBS CONTAINER
+
+                    Admin dashboard se jobs add hone ke baad
+                    isi container me Firebase data automatically
+                    load kiya ja sakta hai.
+
+                    Example Firestore collection:
+                    jobs
+
+                    Fields:
+                    title
+                    organization
+                    vacancies
+                    lastDate
+                    qualification
+                    link
+                    status
+                -->
+
+                <div class="jobs-grid" id="jobsContainer">
+
+
+                    <!-- DEMO JOB 1 -->
+
+                    <div class="job-card">
+
+                        <div class="job-top">
+
+                            <div class="job-logo">
+                                🏛️
+                            </div>
+
+                            <span class="job-tag">
+                                ACTIVE
+                            </span>
+
+                        </div>
+
+                        <h4>
+                            Government Recruitment / Vacancy Update
+                        </h4>
+
+                        <p>
+                            Latest government job notification
+                            and recruitment information.
+                        </p>
+
+                        <div class="job-details">
+                            <span>📌 Govt. Job</span>
+                            <span>📄 Notification</span>
+                        </div>
+
+                        <a href="student-login-v2.html"
+                           class="job-button">
+                            View Details →
+                        </a>
+
+                    </div>
+
+
+                    <!-- DEMO JOB 2 -->
+
+                    <div class="job-card">
+
+                        <div class="job-top">
+
+                            <div class="job-logo">
+                                🚆
+                            </div>
+
+                            <span class="job-tag">
+                                NEW
+                            </span>
+
+                        </div>
+
+                        <h4>
+                            Railway Recruitment Update
+                        </h4>
+
+                        <p>
+                            Railway vacancy, eligibility,
+                            important dates and exam updates.
+                        </p>
+
+                        <div class="job-details">
+                            <span>🚆 Railway</span>
+                            <span>📝 Recruitment</span>
+                        </div>
+
+                        <a href="student-login-v2.html"
+                           class="job-button">
+                            View Details →
+                        </a>
+
+                    </div>
+
+
+                    <!-- DEMO JOB 3 -->
+
+                    <div class="job-card">
+
+                        <div class="job-top">
+
+                            <div class="job-logo">
+                                ⚡
+                            </div>
+
+                            <span class="job-tag">
+                                UPDATE
+                            </span>
+
+                        </div>
+
+                        <h4>
+                            Technical / Instructor Vacancy
+                        </h4>
+
+                        <p>
+                            ITI, CITS, Technical and Instructor
+                            recruitment updates.
+                        </p>
+
+                        <div class="job-details">
+                            <span>⚡ Technical</span>
+                            <span>🎓 Instructor</span>
+                        </div>
+
+                        <a href="student-login-v2.html"
+                           class="job-button">
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY RAJ MOCK TEST
+        ========================== -->
+
+        <section>
+
+            <div class="container why-grid">
+
+                <div class="why-title">
+
+                    <h3>
+                        One Platform for
+                        <span>Better Preparation</span>
+                    </h3>
+
+                    <p>
+                        Raj Mock Test V2.0 is designed to keep your
+                        preparation simple, focused and exam-oriented.
+                    </p>
+
+                    <a href="student-login-v2.html"
+                       class="btn btn-primary"
+                       style="margin-top:22px;">
+                        Start Your Preparation →
+                    </a>
+
+                </div>
+
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🎯
+                        </div>
+
+                        <h4>Exam Focused</h4>
+
+                        <p>
+                            Questions designed around competitive
+                            examination preparation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            📊
+                        </div>
+
+                        <h4>Result Analysis</h4>
+
+                        <p>
+                            Check your score, percentage,
+                            correct and incorrect answers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🔑
+                        </div>
+
+                        <h4>Student Account</h4>
+
+                        <p>
+                            Login once and keep your test
+                            history and results organised.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🔔
+                        </div>
+
+                        <h4>Latest Updates</h4>
+
+                        <p>
+                            Recruitment and vacancy updates
+                            can be published from Admin.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta">
+
+                    <h3>
+                        Ready to Start Your Preparation?
+                    </h3>
+
+                    <p>
+                        Login to your student account and start
+                        practicing mock tests today.
+                    </p>
+
+                    <a href="student-login-v2.html"
+                       class="btn btn-primary">
+                        🎓 Student Login
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+                © 2026 <span>Raj Mock Test V2.0</span>
+            </div>
+
+            <div class="footer-copy">
+                Practice • Test • Improve
+            </div>
+
+            <div class="footer-links">
+
+                <a href="student-login-v2.html">
+                    Student Login
+                </a>
+
+                <a href="admin-login-v2.html">
+                    Admin
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
+

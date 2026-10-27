@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Approval | Raj Mock Test V2.0</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/admin-payment-v2.css">
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+    <main class="admin-payment-page">
+
+        <div class="admin-container">
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div>
+                    <span class="page-badge">💳 PREMIUM</span>
+
+                    <h1>
+                        Payment Approval
+                    </h1>
+
+                    <p>
+                        Review and approve Premium subscription requests.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="refresh-btn"
+                    id="refreshBtn">
+
+                    🔄 Refresh
+
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card pending-card">
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <span>Pending</span>
+                        <strong id="pendingCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card approved-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+                        <span>Approved</span>
+                        <strong id="approvedCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card rejected-card">
+
+                    <div class="stat-icon">
+                        ❌
+                    </div>
+
+                    <div>
+                        <span>Rejected</span>
+                        <strong id="rejectedCount">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="filter-box">
+
+                <div class="filter-left">
+
+                    <label for="statusFilter">
+                        Payment Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Approved">
+                            Approved
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                        <option value="All">
+                            All Payments
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search student / mobile / transaction ID">
+
+                </div>
+
+            </div>
+
+
+            <!-- LOADING -->
+
+            <div
+                class="loading-box"
+                id="loadingBox">
+
+                <div class="loader"></div>
+
+                <p>
+                    Loading payment requests...
+                </p>
+
+            </div>
+
+
+            <!-- EMPTY -->
+
+            <div
+                class="empty-box"
+                id="emptyBox"
+                style="display:none;">
+
+                <div class="empty-icon">
+                    📭
+                </div>
+
+                <h3>
+                    No Payment Requests
+                </h3>
+
+                <p>
+                    There are no payment requests matching your selection.
+                </p>
+
+            </div>
+
+
+            <!-- PAYMENT LIST -->
+
+            <div
+                class="payment-list"
+                id="paymentList">
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- APPROVAL MODAL -->
+
+    <div
+        class="modal-overlay"
+        id="approvalModal">
+
+        <div class="modal-card">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose">
+
+                ×
+
+            </button>
+
+            <div class="modal-icon">
+                ⚠️
+            </div>
+
+            <h2>
+                Approve Payment?
+            </h2>
+
+            <p>
+                This will activate Premium membership for 30 days.
+            </p>
+
+            <div
+                class="modal-details"
+                id="approvalDetails">
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelApproval">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    class="approve-confirm-btn"
+                    id="confirmApproval">
+
+                    ✅ Approve Payment
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REJECT MODAL -->
+
+    <div
+        class="modal-overlay"
+        id="rejectModal">
+
+        <div class="modal-card">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="rejectModalClose">
+
+                ×
+
+            </button>
+
+            <div class="modal-icon reject-icon">
+                ❌
+            </div>
+
+            <h2>
+                Reject Payment
+            </h2>
+
+            <p>
+                Please enter the reason for rejecting this payment.
+            </p>
+
+            <textarea
+                id="rejectReason"
+                placeholder="Enter rejection reason..."
+                maxlength="250"></textarea>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelReject">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    class="reject-confirm-btn"
+                    id="confirmReject">
+
+                    ❌ Reject Payment
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast"
+        id="toast">
+
+        <span id="toastMessage"></span>
+
+    </div>
+
+
+    <script
+        type="module"
+        src="./js/admin-payment-v2.js">
+    </script>
+
+</body>
+
+</html>

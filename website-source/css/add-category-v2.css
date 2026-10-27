@@ -1,0 +1,604 @@
+/* ==========================================================
+   RAJ MOCK TEST V2.0
+   CREATE CATEGORY
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+
+    --bg: #f5f7fb;
+
+    --text: #172033;
+
+    --muted: #7b8495;
+
+    --border: #e7eaf0;
+
+    --white: #ffffff;
+
+    --danger: #dc2626;
+
+}
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================================
+   TOPBAR
+========================================================== */
+
+.topbar {
+
+    height: 76px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.brand-logo {
+
+    width: 43px;
+
+    height: 43px;
+
+    background: #eff6ff;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+}
+
+
+.brand h2 {
+
+    font-size: 18px;
+
+    line-height: 18px;
+
+}
+
+
+.brand span {
+
+    font-size: 9px;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.back-btn {
+
+    border: none;
+
+    background: #f5f7fb;
+
+    color: var(--primary);
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.back-btn:hover {
+
+    background: #eff6ff;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container {
+
+    width: min(850px, 92%);
+
+    margin: 0 auto;
+
+    padding: 40px 0 70px;
+
+}
+
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.page-header {
+
+    margin-bottom: 25px;
+
+}
+
+
+.eyebrow {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.page-header h1 {
+
+    font-size: 29px;
+
+    line-height: 1.3;
+
+}
+
+
+.page-header p {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .04);
+
+}
+
+
+.card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.card-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    background: #eff6ff;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    flex-shrink: 0;
+
+}
+
+
+.card-header h2 {
+
+    font-size: 18px;
+
+}
+
+
+.card-header p {
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    margin-top: 3px;
+
+}
+
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.form-group.full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.form-group label {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    background: #fafbfe;
+
+    border-radius: 11px;
+
+    padding: 12px 13px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    color: var(--text);
+
+    transition: .2s;
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 100px;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #93c5fd;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, .08);
+
+}
+
+
+.form-group small {
+
+    margin-top: 5px;
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+}
+
+
+/* ==========================================================
+   ACTION
+========================================================== */
+
+.action-area {
+
+    margin-top: 30px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+.create-btn {
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 12px 22px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.create-btn:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+
+}
+
+
+.create-btn:disabled {
+
+    opacity: .65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* ==========================================================
+   INFO
+========================================================== */
+
+.info-card {
+
+    margin-top: 18px;
+
+    padding: 18px 20px;
+
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.info-icon {
+
+    font-size: 20px;
+
+}
+
+
+.info-card h3 {
+
+    font-size: 13px;
+
+}
+
+
+.info-card p {
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .topbar {
+
+        padding: 0 4%;
+
+    }
+
+
+    .brand h2 {
+
+        font-size: 15px;
+
+    }
+
+
+    .brand span {
+
+        font-size: 8px;
+
+    }
+
+
+    .back-btn {
+
+        padding: 8px 10px;
+
+        font-size: 10px;
+
+    }
+
+
+    .container {
+
+        width: 92%;
+
+        padding-top: 25px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .card {
+
+        padding: 20px;
+
+        border-radius: 17px;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-group.full {
+
+        grid-column: auto;
+
+    }
+
+
+    .action-area {
+
+        justify-content: stretch;
+
+    }
+
+
+    .create-btn {
+
+        width: 100%;
+
+    }
+
+}

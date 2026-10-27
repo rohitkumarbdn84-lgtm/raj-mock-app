@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Test - Raj Mock Test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/add-test-v2.css"
+    >
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     TOPBAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            📝
+        </div>
+
+        <div>
+
+            <h2>
+                Raj Mock Test
+            </h2>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="backBtn"
+        class="back-btn"
+    >
+        ← Dashboard
+    </button>
+
+</header>
+
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <div class="eyebrow">
+                TEST MANAGEMENT
+            </div>
+
+            <h1>
+                Add New Test
+            </h1>
+
+            <p>
+                Create a test and add all questions from one place.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         TEST DETAILS
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                📋
+            </div>
+
+            <div>
+
+                <h2>
+                    Test Details
+                </h2>
+
+                <p>
+                    Select exam, category and test information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <!-- EXAM -->
+
+            <div class="form-group">
+
+                <label for="examSelect">
+                    Choose Your Exam
+                </label>
+
+                <select id="examSelect">
+
+                    <option value="">
+                        Select Exam
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="categorySelect">
+                    Choose Category
+                </label>
+
+                <select id="categorySelect" disabled>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TEST NAME -->
+
+            <div class="form-group full">
+
+                <label for="testName">
+                    Test Name
+                </label>
+
+                <input
+                    type="text"
+                    id="testName"
+                    placeholder="Enter test name"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- DURATION -->
+
+            <div class="form-group">
+
+                <label for="duration">
+                    Duration (Minutes)
+                </label>
+
+                <input
+                    type="number"
+                    id="duration"
+                    min="1"
+                    placeholder="60"
+                >
+
+            </div>
+
+
+            <!-- PLAN -->
+
+            <div class="form-group">
+
+                <label for="plan">
+                    Test Plan
+                </label>
+
+                <select id="plan">
+
+                    <option value="free">
+                        Free
+                    </option>
+
+                    <option value="premium">
+                        Premium
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         QUESTIONS
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                ❓
+            </div>
+
+            <div>
+
+                <h2>
+                    Questions
+                </h2>
+
+                <p>
+                    Add questions manually or use bulk import.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTION MODE -->
+
+        <div class="mode-tabs">
+
+            <button
+                type="button"
+                class="mode-tab active"
+                id="singleModeBtn"
+            >
+                ➕ Add Question
+            </button>
+
+            <button
+                type="button"
+                class="mode-tab"
+                id="bulkModeBtn"
+            >
+                📚 Bulk Questions
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SINGLE QUESTION
+        ================================================= -->
+
+        <div
+            id="singleQuestionArea"
+            class="question-area"
+        >
+
+            <div class="form-group">
+
+                <label for="questionText">
+                    Question
+                </label>
+
+                <textarea
+                    id="questionText"
+                    rows="4"
+                    placeholder="Enter question or passage..."
+                ></textarea>
+                <label for="singleImageFile">Question image (optional)</label>
+                <input type="file" id="singleImageFile" accept="image/*">
+                <small>PNG/JPG/WebP, maximum 5 MB.</small>
+
+            </div>
+
+
+
+            <div class="options-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Option A
+                    </label>
+
+                    <input
+                        type="text"
+                        id="optionA"
+                        placeholder="Option A"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Option B
+                    </label>
+
+                    <input
+                        type="text"
+                        id="optionB"
+                        placeholder="Option B"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Option C
+                    </label>
+
+                    <input
+                        type="text"
+                        id="optionC"
+                        placeholder="Option C"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Option D
+                    </label>
+
+                    <input
+                        type="text"
+                        id="optionD"
+                        placeholder="Option D"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-group correct-group">
+
+                <label for="correctAnswer">
+                    Correct Answer
+                </label>
+
+                <select id="correctAnswer">
+
+                    <option value="">
+                        Select Correct Answer
+                    </option>
+
+                    <option value="A">
+                        A
+                    </option>
+
+                    <option value="B">
+                        B
+                    </option>
+
+                    <option value="C">
+                        C
+                    </option>
+
+                    <option value="D">
+                        D
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <button
+                type="button"
+                id="addQuestionBtn"
+                class="primary-btn"
+            >
+                ➕ Add Question
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             BULK QUESTIONS
+        ================================================= -->
+
+        <div
+            id="bulkQuestionArea"
+            class="question-area hidden"
+        >
+
+            <div class="bulk-info">
+
+                <strong>
+                    Bulk Question Format
+                </strong>
+
+                <p>
+                    Paste multiple questions. Passage lines and blank lines are preserved. Add <b>Image: https://...</b> for an image URL, or <b>Image: diagram.png</b> and select that file below.
+                </p>
+
+            </div>
+
+
+            <textarea
+                id="bulkQuestions"
+                class="bulk-textarea"
+                placeholder="Q1. What is the capital of India?
+Image: map.png
+A. Mumbai
+B. Delhi
+C. Jaipur
+D. Bhopal
+Answer: B
+
+Q2. What is 2 + 2?
+A. 2
+B. 3
+C. 4
+D. 5
+Answer: C"
+            ></textarea>
+
+
+            <button
+                type="button"
+                id="parseBulkBtn"
+                class="secondary-btn"
+            >
+                📥 Add Bulk Questions
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         QUESTION LIST
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                📑
+            </div>
+
+            <div>
+
+                <h2>
+                    Added Questions
+                </h2>
+
+                <p>
+                    Review questions before saving the test.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="questionList"
+            class="question-list"
+        >
+
+            <div class="empty-questions">
+
+                <div>
+                    📝
+                </div>
+
+                <h3>
+                    No Questions Added
+                </h3>
+
+                <p>
+                    Add a question or import questions in bulk.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="questionCount"
+            class="question-count"
+        >
+            Total Questions: 0
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SAVE
+    ================================================== -->
+
+    <section class="save-section">
+
+        <button
+            type="button"
+            id="saveTestBtn"
+            class="save-btn"
+        >
+            💾 Save Test
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<!-- ======================================================
+     SCRIPT
+====================================================== -->
+
+<script
+    type="module"
+    src="./js/add-test-v2.js"
+></script>
+
+
+</body>
+
+</html>

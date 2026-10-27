@@ -1,0 +1,540 @@
+
+/* ==========================================
+   RAJ MOCK TEST V2.0
+   PREMIUM PAYMENT
+========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7fb,
+            #eef3ff
+        );
+
+    color: #1f2937;
+
+}
+
+
+/* ==========================================
+   PAGE
+========================================== */
+
+.payment-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 15px;
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.payment-card {
+
+    width: min(500px, 100%);
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, .10);
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.payment-header {
+
+    text-align: center;
+
+}
+
+
+.premium-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 12px;
+
+    border-radius: 18px;
+
+    background: #eff6ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 32px;
+
+}
+
+
+.payment-header h1 {
+
+    font-size: 25px;
+
+    color: #111827;
+
+}
+
+
+.payment-header p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================
+   PRICE
+========================================== */
+
+.price-box {
+
+    text-align: center;
+
+    margin: 20px 0;
+
+}
+
+
+.price-box strong {
+
+    font-size: 38px;
+
+    color: #2563eb;
+
+}
+
+
+.price-box span {
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   BENEFITS
+========================================== */
+
+.benefits {
+
+    background: #f8fafc;
+
+    border-radius: 13px;
+
+    padding: 15px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.benefits div {
+
+    font-size: 13px;
+
+    margin: 7px 0;
+
+    color: #374151;
+
+}
+
+
+/* ==========================================
+   PAYMENT TITLE
+========================================== */
+
+.payment-title {
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* ==========================================
+   QR
+========================================== */
+
+.qr-box {
+
+    width: 210px;
+
+    height: 210px;
+
+    margin: 0 auto 20px;
+
+    padding: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.qr-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* ==========================================
+   UPI
+========================================== */
+
+.upi-box {
+
+    margin-bottom: 18px;
+
+}
+
+
+.upi-box label,
+.form-group label {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+
+    color: #374151;
+
+}
+
+
+.upi-row {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.upi-row input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 45px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    padding: 0 12px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    background: #f9fafb;
+
+    outline: none;
+
+}
+
+
+.upi-row button {
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 0 15px;
+
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.upi-row button:hover {
+
+    background: #e0e7ff;
+
+}
+
+
+/* ==========================================
+   TRANSACTION
+========================================== */
+
+.form-group {
+
+    margin-bottom: 18px;
+
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    height: 47px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    padding: 0 13px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+}
+
+
+.form-group input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, .10);
+
+}
+
+
+/* ==========================================
+   SUBMIT
+========================================== */
+
+.submit-btn {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.submit-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+.submit-btn:disabled {
+
+    opacity: .65;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ==========================================
+   NOTE
+========================================== */
+
+.note {
+
+    margin-top: 16px;
+
+    padding: 13px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+}
+
+
+.note p {
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================
+   BACK
+========================================== */
+
+.back-btn {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #2563eb;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-top: 18px;
+
+    cursor: pointer;
+
+}
+
+
+.back-btn:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 500px) {
+
+    .payment-page {
+
+        padding: 15px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .payment-card {
+
+        margin-top: 15px;
+
+        padding: 22px 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .payment-header h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .price-box strong {
+
+        font-size: 34px;
+
+    }
+
+
+    .qr-box {
+
+        width: 190px;
+
+        height: 190px;
+
+    }
+
+
+    .upi-row {
+
+        flex-direction: column;
+
+    }
+
+
+    .upi-row button {
+
+        height: 44px;
+
+    }
+
+}

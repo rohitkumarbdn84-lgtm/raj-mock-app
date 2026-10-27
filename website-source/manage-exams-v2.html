@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Exams - Raj Mock Test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/manage-exams-v2.css"
+    >
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     TOPBAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            🎯
+        </div>
+
+        <div>
+
+            <h2>
+                Raj Mock Test
+            </h2>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="backBtn"
+        class="back-btn"
+    >
+        ← Dashboard
+    </button>
+
+</header>
+
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<main class="container">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <div class="eyebrow">
+                EXAM MANAGEMENT
+            </div>
+
+            <h1>
+                Manage Exams
+            </h1>
+
+            <p>
+                View and delete exams from Firebase.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WARNING -->
+
+    <section class="warning-box">
+
+        <div class="warning-icon">
+            ⚠️
+        </div>
+
+        <div>
+
+            <strong>
+                Important
+            </strong>
+
+            <p>
+                Deleting an exam will also permanently delete
+                its categories, tests and questions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         EXAM LIST
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                🎯
+            </div>
+
+            <div>
+
+                <h2>
+                    Your Exams
+                </h2>
+
+                <p>
+                    Select an exam to delete it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="examList"
+            class="exam-list"
+        >
+
+            <div class="loading-box">
+
+                <div class="loader"></div>
+
+                <p>
+                    Loading exams...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ======================================================
+     DELETE MODAL
+====================================================== -->
+
+<div
+    id="deleteModal"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            ⚠️
+        </div>
+
+        <h2>
+            Delete Exam?
+        </h2>
+
+        <p>
+            Are you sure you want to delete:
+        </p>
+
+        <strong
+            id="deleteExamName"
+            class="delete-exam-name"
+        >
+            Exam
+        </strong>
+
+
+        <div class="delete-warning">
+
+            <div>
+                ❌ Exam
+            </div>
+
+            <div>
+                ❌ Categories
+            </div>
+
+            <div>
+                ❌ Tests
+            </div>
+
+            <div>
+                ❌ Questions
+            </div>
+
+        </div>
+
+
+        <p class="danger-text">
+            This action cannot be undone.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                id="cancelDeleteBtn"
+                class="cancel-btn"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                id="confirmDeleteBtn"
+                class="delete-btn"
+            >
+                🗑 Delete Everything
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     SCRIPT
+====================================================== -->
+
+<script
+    type="module"
+    src="./js/manage-exams-v2.js"
+></script>
+
+
+</body>
+
+</html>

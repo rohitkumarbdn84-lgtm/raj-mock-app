@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Subscription - Raj Mock Test</title>
+
+   <link rel="stylesheet" href="./css/subscription.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="subscription-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                📝
+            </div>
+
+            <div>
+                <strong>Raj Mock Test</strong>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+        <button id="backBtn" class="back-btn">
+            ← Back
+        </button>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN
+    =========================================== -->
+
+    <main class="subscription-container">
+
+        <section class="subscription-title">
+
+            <div>
+                <h1>💎 Subscription Plans</h1>
+
+                <p>
+                    Choose the plan that suits your preparation.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             CURRENT SUBSCRIPTION
+        ======================================= -->
+
+        <section class="current-subscription">
+
+            <div class="current-icon">
+                💎
+            </div>
+
+            <div class="current-info">
+
+                <span>Current Plan</span>
+
+                <strong id="currentPlan">
+                    Loading...
+                </strong>
+
+                <small id="subscriptionStatus">
+                    Checking subscription...
+                </small>
+
+            </div>
+
+            <div class="expiry-info">
+
+                <span>Expiry Date</span>
+
+                <strong id="expiryDate">
+                    --
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             PLANS
+        ======================================= -->
+
+        <section class="plans-grid">
+
+
+            <!-- FREE PLAN -->
+
+            <div class="plan-card free-plan">
+
+                <div class="plan-header">
+
+                    <div class="plan-icon">
+                        🆓
+                    </div>
+
+                    <h2>Free</h2>
+
+                    <p>
+                        Start your preparation
+                    </p>
+
+                </div>
+
+
+                <div class="price">
+
+                    <strong>₹0</strong>
+
+                    <span>/ Forever</span>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        ✅ Limited Mock Tests
+                    </li>
+
+                    <li>
+                        ✅ Basic Test Access
+                    </li>
+
+                    <li>
+                        ✅ Result Analysis
+                    </li>
+
+                    <li>
+                        ❌ Premium Tests
+                    </li>
+
+                    <li>
+                        ❌ Unlimited Tests
+                    </li>
+
+                </ul>
+
+
+                <button
+                    id="freePlanBtn"
+                    class="plan-btn free-btn"
+                    disabled>
+
+                    Current Plan
+
+                </button>
+
+            </div>
+
+
+            <!-- PREMIUM PLAN -->
+
+            <div class="plan-card premium-plan">
+
+                <div class="premium-badge">
+                    ⭐ MOST POPULAR
+                </div>
+
+
+                <div class="plan-header">
+
+                    <div class="plan-icon premium-icon">
+                        💎
+                    </div>
+
+                    <h2>Premium</h2>
+
+                    <p>
+                        Complete exam preparation
+                    </p>
+
+                </div>
+
+
+                <div class="price">
+
+                    <strong>₹199</strong>
+
+                    <span>/ Month</span>
+
+                </div>
+
+
+                <ul class="features">
+
+                    <li>
+                        ✅ Unlimited Mock Tests
+                    </li>
+
+                    <li>
+                        ✅ All Premium Tests
+                    </li>
+
+                    <li>
+                        ✅ Full Answer Key
+                    </li>
+
+                    <li>
+                        ✅ Detailed Results
+                    </li>
+
+                    <li>
+                        ✅ Complete Test Access
+                    </li>
+
+                </ul>
+
+
+                <button
+                    id="upgradeBtn"
+                    class="plan-btn premium-btn">
+
+                    💎 Upgrade to Premium
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             NOTE
+        ======================================= -->
+
+        <div class="subscription-note">
+
+            <span>🔐</span>
+
+            <p>
+                Your subscription is securely linked with your
+                student account.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        © 2026 Raj Mock Test V2.0
+
+    </footer>
+
+
+    <script type="module" src="js/subscription.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Premium Subscription | Raj Mock Test V2.0</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/payment-v2.css">
+
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+    <main class="payment-page">
+
+        <div class="payment-card">
+
+            <!-- HEADER -->
+
+            <div class="payment-header">
+
+                <div class="premium-icon">
+                    💎
+                </div>
+
+                <h1>
+                    Premium Membership
+                </h1>
+
+                <p>
+                    Unlock All Premium Mock Tests
+                </p>
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div class="price-box">
+
+                <strong>
+                    ₹199
+                </strong>
+
+                <span>
+                    / Month
+                </span>
+
+            </div>
+
+
+            <!-- BENEFITS -->
+
+            <div class="benefits">
+
+                <div>
+                    ✅ All Premium Mock Tests
+                </div>
+
+                <div>
+                    ✅ Unlimited Practice
+                </div>
+
+                <div>
+                    ✅ Detailed Results & Answer Key
+                </div>
+
+            </div>
+
+
+            <!-- QR -->
+
+            <div class="payment-title">
+                Scan & Pay
+            </div>
+
+            <div class="qr-box">
+
+                <img
+                    src="./images/payment-qr.png"
+                    alt="Payment QR Code">
+
+            </div>
+
+
+            <!-- UPI -->
+
+            <div class="upi-box">
+
+                <label>
+                    UPI ID
+                </label>
+
+                <div class="upi-row">
+
+                    <input
+                        type="text"
+                        id="upiId"
+                        value="6396192742@kotakbank"
+                        readonly>
+
+                    <button
+                        type="button"
+                        id="copyBtn">
+
+                        📋 Copy
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRANSACTION -->
+
+            <div class="form-group">
+
+                <label for="txnId">
+                    Transaction ID
+                </label>
+
+                <input
+                    type="text"
+                    id="txnId"
+                    placeholder="Enter UPI Transaction ID"
+                    autocomplete="off">
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="button"
+                class="submit-btn"
+                id="submitPayment">
+
+                Submit Payment Request
+
+            </button>
+
+
+            <!-- NOTE -->
+
+            <div class="note">
+
+                <p>
+                    ✅ Payment करने के बाद Transaction ID दर्ज करें।
+                </p>
+
+                <p>
+                    ⏳ Admin verification के बाद Premium Activate किया जाएगा।
+                </p>
+
+            </div>
+
+
+            <!-- BACK -->
+
+            <button
+                type="button"
+                class="back-btn"
+                id="backBtn">
+
+                ← Back to Dashboard
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script
+        type="module"
+        src="./js/payment-v2.js">
+    </script>
+
+</body>
+
+</html>
+

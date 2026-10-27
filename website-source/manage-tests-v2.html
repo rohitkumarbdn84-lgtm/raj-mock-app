@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Tests - Raj Mock Test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/manage-tests-v2.css"
+    >
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+<!-- ======================================================
+     TOPBAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            📝
+        </div>
+
+        <div>
+            <h2>Raj Mock Test</h2>
+            <span>ADMIN PANEL</span>
+        </div>
+
+    </div>
+
+    <button
+        type="button"
+        id="backBtn"
+        class="back-btn"
+    >
+        ← Dashboard
+    </button>
+
+</header>
+
+
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<main class="container">
+
+    <section class="page-header">
+
+        <div class="eyebrow">
+            TEST MANAGEMENT
+        </div>
+
+        <h1>
+            Manage Tests
+        </h1>
+
+        <p>
+            Select an exam and category to manage its tests.
+        </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         FILTER
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                🔎
+            </div>
+
+            <div>
+
+                <h2>
+                    Choose Your Exam
+                </h2>
+
+                <p>
+                    Select the exam whose tests you want to manage.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label for="examSelect">
+                    Choose Your Exam
+                </label>
+
+                <select id="examSelect">
+
+                    <option value="">
+                        Select Exam
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="categorySelect">
+                    Choose Category
+                </label>
+
+                <select
+                    id="categorySelect"
+                    disabled
+                >
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         TEST LIST
+    ================================================== -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                📚
+            </div>
+
+            <div>
+
+                <h2>
+                    Tests
+                </h2>
+
+                <p>
+                    Select a test to delete it permanently.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="testList" class="test-list">
+
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Select Exam & Category
+                </h3>
+
+                <p>
+                    Choose an exam and category to view tests.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ======================================================
+     SCRIPT
+====================================================== -->
+
+<script
+    type="module"
+    src="./js/manage-tests-v2.js"
+></script>
+
+</body>
+</html>

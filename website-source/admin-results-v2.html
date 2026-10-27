@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Results - Raj Mock Test V2.0</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/admin-results-v2.css"
+    >
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            📊
+        </div>
+
+        <div>
+            <strong>
+                Raj Mock Test
+            </strong>
+
+            <span>
+                ADMIN RESULTS
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <button
+            type="button"
+            id="backDashboardBtn"
+            class="back-btn"
+        >
+            ← Dashboard
+        </button>
+
+        <button
+            type="button"
+            id="logoutBtn"
+            class="logout-btn"
+        >
+            🚪 Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <div class="eyebrow">
+                RESULT MANAGEMENT
+            </div>
+
+            <h1>
+                Student Results
+            </h1>
+
+            <p>
+                View and manage all student test results.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="refreshBtn"
+            class="refresh-btn"
+        >
+            🔄 Refresh
+        </button>
+
+    </section>
+
+
+    <!-- =================================================
+         STATS
+    ================================================== -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+            <div>
+                <span>
+                    Total Results
+                </span>
+
+                <strong id="totalResults">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+                <span>
+                    Students
+                </span>
+
+                <strong id="totalStudents">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🏆
+            </div>
+
+            <div>
+                <span>
+                    Best Score
+                </span>
+
+                <strong id="bestScore">
+                    0%
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📈
+            </div>
+
+            <div>
+                <span>
+                    Average
+                </span>
+
+                <strong id="averageScore">
+                    0%
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SEARCH / FILTER
+    ================================================== -->
+
+    <section class="filter-card">
+
+        <div class="search-box">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search student, mobile or test..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="result-info">
+
+            <strong id="resultCount">
+                0
+            </strong>
+
+            <span>
+                results found
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         STATUS
+    ================================================== -->
+
+    <div
+        id="loadingMessage"
+        class="message loading-message"
+    >
+        ⏳ Loading results...
+    </div>
+
+
+    <div
+        id="emptyMessage"
+        class="message empty-message"
+        style="display:none;"
+    >
+        📭 No results found.
+    </div>
+
+
+    <!-- =================================================
+         RESULTS TABLE
+    ================================================== -->
+
+    <section
+        class="results-card"
+        id="resultsCard"
+    >
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            #
+                        </th>
+
+                        <th>
+                            Student
+                        </th>
+
+                        <th>
+                            Test
+                        </th>
+
+                        <th>
+                            Score
+                        </th>
+
+                        <th>
+                            Correct
+                        </th>
+
+                        <th>
+                            Wrong
+                        </th>
+
+                        <th>
+                            Unattempted
+                        </th>
+
+                        <th>
+                            %
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="resultsTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     VIEW RESULT MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="viewModal"
+    style="display:none;"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="modal-label">
+                    RESULT DETAILS
+                </span>
+
+                <h2 id="modalTestName">
+                    Result
+                </h2>
+            </div>
+
+            <button
+                type="button"
+                id="closeModalBtn"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="student-modal">
+
+                <div
+                    class="modal-avatar"
+                    id="modalAvatar"
+                >
+                    S
+                </div>
+
+                <div>
+
+                    <strong id="modalStudentName">
+                        Student
+                    </strong>
+
+                    <span id="modalStudentMobile">
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-score">
+
+                <strong id="modalPercentage">
+                    0%
+                </strong>
+
+                <span>
+                    Score
+                </span>
+
+            </div>
+
+
+            <div class="modal-grid">
+
+                <div>
+                    <span>Correct</span>
+                    <strong id="modalCorrect">0</strong>
+                </div>
+
+                <div>
+                    <span>Wrong</span>
+                    <strong id="modalWrong">0</strong>
+                </div>
+
+                <div>
+                    <span>Unattempted</span>
+                    <strong id="modalUnattempted">0</strong>
+                </div>
+
+                <div>
+                    <span>Total</span>
+                    <strong id="modalTotal">0</strong>
+                </div>
+
+                <div>
+                    <span>Time Taken</span>
+                    <strong id="modalTime">00:00</strong>
+                </div>
+
+                <div>
+                    <span>Duration</span>
+                    <strong id="modalDuration">0 Min</strong>
+                </div>
+
+                <div>
+                    <span>Category</span>
+                    <strong id="modalCategory">-</strong>
+                </div>
+
+                <div>
+                    <span>Date</span>
+                    <strong id="modalDate">-</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                id="modalDeleteBtn"
+                class="modal-delete-btn"
+            >
+                🗑️ Delete Result
+            </button>
+
+            <button
+                type="button"
+                id="modalCloseBtn"
+                class="modal-close-btn"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CONFIRM DELETE MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="deleteModal"
+    style="display:none;"
+>
+
+    <div class="delete-modal">
+
+        <div class="delete-icon">
+            ⚠️
+        </div>
+
+        <h2>
+            Delete Result?
+        </h2>
+
+        <p>
+            This result will be permanently deleted from
+            Firestore.
+        </p>
+
+        <div class="delete-info">
+
+            <strong id="deleteStudentName">
+                Student
+            </strong>
+
+            <span id="deleteTestName">
+                Test
+            </span>
+
+            <small id="deleteScore">
+                Score
+            </small>
+
+        </div>
+
+        <div class="delete-actions">
+
+            <button
+                type="button"
+                id="cancelDeleteBtn"
+                class="cancel-btn"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmDeleteBtn"
+                class="confirm-delete-btn"
+            >
+                Yes, Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script
+    type="module"
+    src="./js/admin-results-v2.js"
+></script>
+
+</body>
+
+</html>

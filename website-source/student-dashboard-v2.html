@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raj Mock Test V2.0</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./css/student-v2.css">
+    <link rel="stylesheet" href="css/raj-mock-v2-theme.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                🎓
+            </div>
+
+            <div class="brand-text">
+                <strong>RAJ MOCK</strong>
+                <span>TEST V2.0</span>
+            </div>
+
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn"
+                type="button"
+                title="Notifications"
+            >
+                🔔
+                <i></i>
+            </button>
+
+            <div class="student-mini">
+
+                <div
+                    class="student-avatar"
+                    id="profileAvatar"
+                >
+                    R
+                </div>
+
+                <div class="student-mini-info">
+                    <strong id="studentName">Student</strong>
+                    <span>Student Account</span>
+                </div>
+
+            </div>
+
+            <button
+                class="logout-btn"
+                id="logoutBtn"
+                type="button"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="main-container">
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-pattern"></div>
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    <span></span>
+                    STUDY SMART • SCORE BETTER
+                </div>
+
+                <h1>
+                    Welcome back,
+                    <strong id="heroStudentName">Student</strong>
+                </h1>
+
+                <p>
+                    Select your exam, practice with mock tests
+                    and track your performance.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button
+                        class="primary-action"
+                        id="heroTestsBtn"
+                        type="button"
+                    >
+                        🚀 Start Practice
+                    </button>
+
+                    <button
+                        class="secondary-action"
+                        id="heroResultsBtn"
+                        type="button"
+                    >
+                        📊 My Results
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="gold-orbit orbit-one"></div>
+                <div class="gold-orbit orbit-two"></div>
+
+                <div class="hero-trophy">
+                    🏆
+                </div>
+
+                <div class="floating-card floating-card-one">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Practice</strong>
+                        <small>Every Day</small>
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card floating-card-two">
+
+                    <span>⚡</span>
+
+                    <div>
+                        <strong>Improve</strong>
+                        <small>Your Score</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon gold">
+                    📝
+                </div>
+
+                <div>
+                    <span>Tests Attempted</span>
+                    <strong id="statTests">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🎯
+                </div>
+
+                <div>
+                    <span>Best Score</span>
+                    <strong id="statBest">0%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    📈
+                </div>
+
+                <div>
+                    <span>Average Score</span>
+                    <strong id="statAverage">0%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    🏆
+                </div>
+
+                <div>
+                    <span>Performance</span>
+                    <strong id="statPerformance">Start</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXAMS -->
+        <section class="content-section">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span class="section-label">
+                        PREPARATION
+                    </span>
+
+                    <h2>
+                        Choose Your Exam
+                    </h2>
+
+                    <p>
+                        Select an exam and start practicing.
+                    </p>
+
+                </div>
+
+                <div class="exam-count">
+                    <span id="examCount">0</span>
+                    Exams
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="exam-search">
+
+                <span>🔎</span>
+
+                <input
+                    type="text"
+                    id="searchExam"
+                    placeholder="Search exam..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- EXAMS -->
+            <div
+                id="examGrid"
+                class="exam-grid"
+            >
+
+                <div class="loading-state">
+
+                    <div class="loader"></div>
+
+                    <span>
+                        Loading exams...
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT RESULT -->
+        <section class="content-section">
+
+            <div class="section-top">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR PROGRESS
+                    </span>
+
+                    <h2>
+                        Continue Learning
+                    </h2>
+
+                    <p>
+                        Track your latest test performance.
+                    </p>
+
+                </div>
+
+                <button
+                    class="text-button"
+                    id="resultsBtn"
+                    type="button"
+                >
+                    View All Results →
+                </button>
+
+            </div>
+
+
+            <div class="recent-card">
+
+                <div class="recent-left">
+
+                    <div class="recent-icon">
+                        📚
+                    </div>
+
+                    <div class="recent-details">
+
+                        <span class="recent-tag">
+                            RECENT TEST
+                        </span>
+
+                        <h3 id="recentTest">
+                            No test attempted yet
+                        </h3>
+
+                        <p id="recentInfo">
+                            Start your first test to see
+                            your progress here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="continue-btn"
+                    id="continueBtn"
+                    type="button"
+                    style="display:none;"
+                >
+                    View Result
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PREMIUM -->
+        <section class="premium-card">
+
+            <div class="premium-decoration"></div>
+
+            <div class="premium-content">
+
+                <span class="premium-label">
+                    💎 PREMIUM MEMBERSHIP
+                </span>
+
+                <h2>
+                    Prepare without limits.
+                </h2>
+
+                <p>
+                    Unlock premium mock tests, unlimited practice
+                    and detailed performance analysis.
+                </p>
+
+                <button
+                    id="subscriptionBtn"
+                    class="premium-btn"
+                    type="button"
+                >
+                    Explore Premium
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <div class="premium-visual">
+                💎
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-item active"
+            id="homeNavBtn"
+            type="button"
+        >
+            <span>🏠</span>
+            <small>Home</small>
+        </button>
+
+
+        <button
+            class="nav-item"
+            id="testsBtn"
+            type="button"
+        >
+            <span>📚</span>
+            <small>Tests</small>
+        </button>
+
+
+        <button
+            class="nav-item"
+            id="resultsNavBtn"
+            type="button"
+        >
+            <span>📊</span>
+            <small>Results</small>
+        </button>
+
+
+        <button
+            class="nav-item"
+            id="rankNavBtn"
+            type="button"
+        >
+            <span>🏆</span>
+            <small>Rank</small>
+        </button>
+
+
+        <button
+            class="nav-item"
+            id="profileNavBtn"
+            type="button"
+        >
+            <span>👤</span>
+            <small>Profile</small>
+        </button>
+
+    </nav>
+
+</div>
+
+
+<script
+    type="module"
+    src="js/student-dashboard-v2.js"
+></script>
+
+</body>
+</html>

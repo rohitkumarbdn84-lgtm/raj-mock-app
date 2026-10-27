@@ -1,0 +1,857 @@
+/* ==========================================================
+   RAJ MOCK TEST V2.0
+   MANAGE EXAMS
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7fb,
+            #eef2f7
+        );
+
+    color: #1f2937;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================================
+   TOPBAR
+========================================================== */
+
+.topbar {
+
+    height: 72px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.brand-logo {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+}
+
+
+.brand h2 {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.brand span {
+
+    display: block;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+
+    font-weight: 600;
+
+}
+
+
+.back-btn {
+
+    border: none;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.back-btn:hover {
+
+    background: #e5e7eb;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container {
+
+    width: min(1100px, 92%);
+
+    margin: 35px auto 60px;
+
+}
+
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.page-header {
+
+    margin-bottom: 25px;
+
+}
+
+
+.eyebrow {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #6366f1;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+}
+
+
+.page-header h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.page-header p {
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================================
+   WARNING
+========================================================== */
+
+.warning-box {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    background: #fff7ed;
+
+    border: 1px solid #fed7aa;
+
+    border-radius: 14px;
+
+    padding: 17px 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.warning-icon {
+
+    font-size: 25px;
+
+}
+
+
+.warning-box strong {
+
+    color: #9a3412;
+
+}
+
+
+.warning-box p {
+
+    color: #9a3412;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.04);
+
+}
+
+
+.card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #edf0f3;
+
+}
+
+
+.card-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    background: #eef2ff;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+}
+
+
+.card-header h2 {
+
+    font-size: 18px;
+
+}
+
+
+.card-header p {
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================================
+   EXAM LIST
+========================================================== */
+
+.exam-list {
+
+    padding: 20px;
+
+    display: grid;
+
+    gap: 13px;
+
+}
+
+
+.exam-item {
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 16px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    transition: .2s;
+
+}
+
+
+.exam-item:hover {
+
+    border-color: #c7d2fe;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.05);
+
+}
+
+
+.exam-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+}
+
+
+.exam-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: #f3f4f6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+}
+
+
+.exam-info {
+
+    min-width: 0;
+
+}
+
+
+.exam-info h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 3px;
+
+    word-break: break-word;
+
+}
+
+
+.exam-info p {
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+}
+
+
+.exam-id {
+
+    font-size: 10px;
+
+    color: #9ca3af;
+
+    margin-top: 3px;
+
+}
+
+
+.delete-btn-small {
+
+    border: none;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition: .2s;
+
+}
+
+
+.delete-btn-small:hover {
+
+    background: #fecaca;
+
+}
+
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.loading-box {
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: #6b7280;
+
+}
+
+
+.loader {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: 4px solid #e5e7eb;
+
+    border-top-color: #6366f1;
+
+    border-radius: 50%;
+
+    animation:
+        spin .8s linear infinite;
+
+    margin: 0 auto 12px;
+
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==========================================================
+   EMPTY
+========================================================== */
+
+.empty-box {
+
+    text-align: center;
+
+    padding: 55px 20px;
+
+}
+
+
+.empty-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.empty-box h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.empty-box p {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================================
+   MODAL
+========================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(15, 23, 42, .62);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 999;
+
+}
+
+
+.modal.hidden {
+
+    display: none;
+
+}
+
+
+.modal-box {
+
+    width: min(480px, 100%);
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
+}
+
+
+.modal-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    background: #fee2e2;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin: 0 auto 15px;
+
+}
+
+
+.modal-box h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.modal-box > p {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+.delete-exam-name {
+
+    display: block;
+
+    font-size: 17px;
+
+    color: #111827;
+
+    margin: 8px 0 18px;
+
+}
+
+
+.delete-warning {
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 12px;
+
+    padding: 13px;
+
+    text-align: left;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    color: #991b1b;
+
+    margin-bottom: 13px;
+
+}
+
+
+.danger-text {
+
+    color: #dc2626 !important;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+}
+
+
+.modal-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.cancel-btn,
+.delete-btn {
+
+    flex: 1;
+
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.cancel-btn {
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+}
+
+
+.delete-btn {
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+}
+
+
+.delete-btn:hover {
+
+    background: #b91c1c;
+
+}
+
+
+.delete-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 650px) {
+
+    .topbar {
+
+        padding: 0 15px;
+
+    }
+
+
+    .brand h2 {
+
+        font-size: 15px;
+
+    }
+
+
+    .brand span {
+
+        font-size: 8px;
+
+    }
+
+
+    .back-btn {
+
+        padding: 8px 10px;
+
+        font-size: 11px;
+
+    }
+
+
+    .container {
+
+        width: 94%;
+
+        margin-top: 25px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .exam-item {
+
+        align-items: flex-start;
+
+    }
+
+
+    .exam-left {
+
+        align-items: flex-start;
+
+    }
+
+
+    .delete-btn-small {
+
+        padding: 8px 10px;
+
+        font-size: 11px;
+
+    }
+
+
+    .delete-warning {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .modal-box {
+
+        padding: 23px;
+
+    }
+
+}
